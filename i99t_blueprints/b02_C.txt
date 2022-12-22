@@ -1,0 +1,58 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> i99t/b02/b02_C()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto U_REG_SCAN_IN = ntk.create_pi("U_REG_SCAN_IN");
+    const auto LINEA = ntk.create_pi("LINEA");
+    const auto STATO_REG_2__SCAN_IN = ntk.create_pi("STATO_REG_2__SCAN_IN");
+    const auto STATO_REG_1__SCAN_IN = ntk.create_pi("STATO_REG_1__SCAN_IN");
+    const auto STATO_REG_0__SCAN_IN = ntk.create_pi("STATO_REG_0__SCAN_IN");
+    const auto U34 = ntk.create_not(STATO_REG_2__SCAN_IN);
+    const auto U35 = ntk.create_not(STATO_REG_0__SCAN_IN);
+    const auto U36 = ntk.create_not(LINEA);
+    const auto U37 = ntk.create_not(STATO_REG_1__SCAN_IN);
+    const auto U40 = ntk.create_or(LINEA, STATO_REG_2__SCAN_IN);
+    const auto U41_h = ntk.create_and(U40, STATO_REG_0__SCAN_IN);
+    const auto U41 = ntk.create_not(U41_h);
+    const auto U43 = ntk.create_or(LINEA, STATO_REG_1__SCAN_IN);
+    const auto U44_h = ntk.create_and(U34, U43);
+    const auto U44 = ntk.create_not(U44_h);
+    const auto U45_h = ntk.create_and(LINEA, U34);
+    const auto U45 = ntk.create_not(U45_h);
+    const auto U46_h = ntk.create_and(U45, STATO_REG_0__SCAN_IN);
+    const auto U46 = ntk.create_not(U46_h);
+    const auto U47_h1 = ntk.create_or(LINEA, STATO_REG_2__SCAN_IN);
+    const auto U47 = ntk.create_or(U47_h1, STATO_REG_0__SCAN_IN);
+    const auto U48_h = ntk.create_and(U46, U37);
+    const auto U48 = ntk.create_not(U48_h);
+    const auto U49_h = ntk.create_and(LINEA, U34);
+    const auto U49 = ntk.create_not(U49_h);
+    const auto U50_h = ntk.create_and(U36, STATO_REG_2__SCAN_IN);
+    const auto U50 = ntk.create_not(U50_h);
+    const auto U51_h = ntk.create_and(U44, STATO_REG_0__SCAN_IN);
+    const auto U51 = ntk.create_not(U51_h);
+    const auto U52_h1 = ntk.create_and(U34, U35);
+    const auto U52_h2 = ntk.create_and(U52_h1, STATO_REG_1__SCAN_IN);
+    const auto U52 = ntk.create_not(U52_h2);
+    const auto U31_h1 = ntk.create_and(U35, U37);
+    const auto U31 = ntk.create_and(U31_h1, STATO_REG_2__SCAN_IN);
+    const auto U32_h = ntk.create_and(U48, U47);
+    const auto U32 = ntk.create_not(U32_h);
+    const auto U38_h = ntk.create_and(U52, U51);
+    const auto U38 = ntk.create_not(U38_h);
+    const auto U39_h1 = ntk.create_and(U50, U49);
+    const auto U39_h2 = ntk.create_and(U39_h1, U35);
+    const auto U39 = ntk.create_not(U39_h2);
+    const auto U42_h = ntk.create_and(U39, STATO_REG_1__SCAN_IN);
+    const auto U42 = ntk.create_not(U42_h);
+    const auto U33_h = ntk.create_and(U42, U41);
+    const auto U33 = ntk.create_not(U33_h);
+
+    ntk.create_po(U_REG_SCAN_IN, "U_REG_SCAN_IN");
+    ntk.create_po(U33, "U33");
+    ntk.create_po(U38, "U38");
+    ntk.create_po(U32, "U32");
+    ntk.create_po(U31, "U31");
+
+    return ntk;
+}

@@ -1,0 +1,62 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> b02_opt()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto LINEA = ntk.create_pi("LINEA");
+    const auto STATO_REG_2_ = ntk.create_ro();
+    const auto STATO_REG_1_ = ntk.create_ro();
+    const auto STATO_REG_0_ = ntk.create_ro();
+    const auto U_REG = ntk.create_ro();
+    const auto U72_h = ntk.create_and(LINEA, STATO_REG_1_);
+    const auto U72 = ntk.create_not(U72_h);
+    const auto U55 = ntk.create_not(STATO_REG_2_);
+    const auto U56 = ntk.create_not(STATO_REG_0_);
+    const auto U58 = ntk.create_not(LINEA);
+    const auto U59_h1 = ntk.create_or(LINEA, STATO_REG_2_);
+    const auto U59 = ntk.create_or(U59_h1, STATO_REG_1_);
+    const auto U61_h = ntk.create_and(STATO_REG_0_, U59);
+    const auto U61 = ntk.create_not(U61_h);
+    const auto U62 = ntk.create_or(LINEA, STATO_REG_1_);
+    const auto U63_h = ntk.create_and(U55, U62);
+    const auto U63 = ntk.create_not(U63_h);
+    const auto U65 = ntk.create_or(STATO_REG_0_, STATO_REG_1_);
+    const auto U66_h = ntk.create_and(LINEA, U55);
+    const auto U66 = ntk.create_not(U66_h);
+    const auto U67_h = ntk.create_and(STATO_REG_2_, U58);
+    const auto U67 = ntk.create_not(U67_h);
+    const auto U68_h = ntk.create_and(U67, U66);
+    const auto U68 = ntk.create_not(U68_h);
+    const auto U69_h = ntk.create_and(STATO_REG_0_, U63);
+    const auto U69 = ntk.create_not(U69_h);
+    const auto U70_h1 = ntk.create_and(STATO_REG_1_, U55);
+    const auto U70_h2 = ntk.create_and(U70_h1, U56);
+    const auto U70 = ntk.create_not(U70_h2);
+    const auto U71_h = ntk.create_and(STATO_REG_0_, U58);
+    const auto U71 = ntk.create_not(U71_h);
+    const auto U52_h1 = ntk.create_or(STATO_REG_1_, STATO_REG_0_);
+    const auto U52_h2 = ntk.create_or(U52_h1, U55);
+    const auto U52 = ntk.create_not(U52_h2);
+    const auto U57_h = ntk.create_and(U70, U69);
+    const auto U57 = ntk.create_not(U57_h);
+    const auto U60_h = ntk.create_and(STATO_REG_1_, U68);
+    const auto U60 = ntk.create_not(U60_h);
+    const auto U64_h1 = ntk.create_and(U72, U71);
+    const auto U64_h2 = ntk.create_and(U64_h1, U55);
+    const auto U64 = ntk.create_not(U64_h2);
+    const auto U53_h = ntk.create_and(U65, U64);
+    const auto U53 = ntk.create_not(U53_h);
+    const auto U54_h = ntk.create_and(U61, U60);
+    const auto U54 = ntk.create_not(U54_h);
+
+    const auto bridge_out_neg_1 = ntk.create_not(U_REG);
+    const auto bridge_out_1 = ntk.create_not(bridge_out_neg_1);
+
+    ntk.create_po(bridge_out_1, "U_REG");
+
+    ntk.create_ri(U54);
+    ntk.create_ri(U57);
+    ntk.create_ri(U53);
+    ntk.create_ri(U52);
+
+    return ntk;
+}

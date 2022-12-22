@@ -1,0 +1,37 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> 1bitAdderMaj()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto A = ntk.create_pi("A");
+    const auto B = ntk.create_pi("B");
+    const auto Cin = ntk.create_pi("Cin");
+    const auto new_n5_ = ntk.create_and(A, B);
+    const auto new_n6_ = ntk.create_and(A, Cin);
+    const auto nnew_n5_ = ntk.create_not(new_n5_);
+    const auto nnew_n6_ = ntk.create_not(new_n6_);
+    const auto new_n7_ = ntk.create_and(nnew_n5_, nnew_n6_);
+    const auto new_n8_ = ntk.create_and(B, Cin);
+    const auto nnew_n8_ = ntk.create_not(new_n8_);
+    const auto new_n9_ = ntk.create_and(new_n7_, nnew_n8_);
+    const auto new_n10_ = ntk.create_and(A, new_n9_);
+    const auto new_n11_ = ntk.create_and(B, new_n9_);
+    const auto nnew_n10_ = ntk.create_not(new_n10_);
+    const auto nnew_n11_ = ntk.create_not(new_n11_);
+    const auto new_n12_ = ntk.create_and(nnew_n10_, nnew_n11_);
+    const auto new_n13_ = ntk.create_and(nnew_n5_, new_n12_);
+    const auto nnew_n9_ = ntk.create_not(new_n9_);
+    const auto nnew_n13_ = ntk.create_not(new_n13_);
+    const auto new_n14_ = ntk.create_and(nnew_n9_, nnew_n13_);
+    const auto nCin = ntk.create_not(Cin);
+    const auto new_n15_ = ntk.create_and(nCin, nnew_n13_);
+    const auto new_n16_ = ntk.create_and(nCin, nnew_n9_);
+    const auto nnew_n15_ = ntk.create_not(new_n15_);
+    const auto nnew_n16_ = ntk.create_not(new_n16_);
+    const auto new_n17_ = ntk.create_and(nnew_n15_, nnew_n16_);
+    const auto nnew_n17_ = ntk.create_not(new_n17_);
+    const auto M3 = ntk.create_or(new_n14_, new_n17_);
+
+    ntk.create_po(M3, "M3");
+
+    return ntk;
+}
