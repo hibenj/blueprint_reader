@@ -1,15 +1,12 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> i99t/b02/b02()
+mockturtle::names_view<Ntk> b02()
 {
     mockturtle::names_view<Ntk> ntk{};
-
     const auto LINEA = ntk.create_pi("LINEA");
-
     const auto U_REG = ntk.create_ro();
     const auto STATO_REG_2_ = ntk.create_ro();
     const auto STATO_REG_1_ = ntk.create_ro();
     const auto STATO_REG_0_ = ntk.create_ro();
-    
     const auto U34 = ntk.create_not(STATO_REG_2_);
     const auto U35 = ntk.create_not(STATO_REG_0_);
     const auto U36 = ntk.create_not(LINEA);
@@ -51,7 +48,11 @@ mockturtle::names_view<Ntk> i99t/b02/b02()
     const auto U33_h = ntk.create_and(U42, U41);
     const auto U33 = ntk.create_not(U33_h);
 
-    ntk.create_po(U31, "U_REG");
+    const auto bridge_out_neg_1 = ntk.create_not(U_REG);
+    const auto bridge_out_1 = ntk.create_not(bridge_out_neg_1);
+
+    ntk.create_po(bridge_out_1, "U_REG");
+
     ntk.create_ri(U31);
     ntk.create_ri(U33);
     ntk.create_ri(U38);

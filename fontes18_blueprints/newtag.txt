@@ -1,0 +1,34 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> newtag()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto pi0 = ntk.create_pi("pi0");
+    const auto pi1 = ntk.create_pi("pi1");
+    const auto pi2 = ntk.create_pi("pi2");
+    const auto pi3 = ntk.create_pi("pi3");
+    const auto pi4 = ntk.create_pi("pi4");
+    const auto pi5 = ntk.create_pi("pi5");
+    const auto pi6 = ntk.create_pi("pi6");
+    const auto pi7 = ntk.create_pi("pi7");
+    const auto new_n10_ = ntk.create_and(pi6, pi7);
+    const auto npi4 = ntk.create_not(pi4);
+    const auto npi5 = ntk.create_not(pi5);
+    const auto new_n11_ = ntk.create_and(npi4, npi5);
+    const auto nnew_n11_ = ntk.create_not(new_n11_);
+    const auto new_n12_ = ntk.create_and(new_n10_, nnew_n11_);
+    const auto new_n13_ = ntk.create_and(pi4, pi5);
+    const auto nnew_n12_ = ntk.create_not(new_n12_);
+    const auto nnew_n13_ = ntk.create_not(new_n13_);
+    const auto new_n14_ = ntk.create_and(nnew_n12_, nnew_n13_);
+    const auto new_n15_ = ntk.create_and(pi3, new_n14_);
+    const auto npi2 = ntk.create_not(pi2);
+    const auto new_n16_ = ntk.create_and(pi1, npi2);
+    const auto npi0 = ntk.create_not(pi0);
+    const auto new_n17_ = ntk.create_and(npi0, new_n16_);
+    const auto nnew_n17_ = ntk.create_not(new_n17_);
+    const auto po0 = ntk.create_or(new_n15_, new_n17_);
+
+    ntk.create_po(po0, "po0");
+
+    return ntk;
+}

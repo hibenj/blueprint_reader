@@ -1,0 +1,28 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> random_2()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto n_1 = ntk.create_pi("n_1");
+    const auto n_2 = ntk.create_pi("n_2");
+    const auto n_3 = ntk.create_pi("n_3");
+    const auto n_4 = ntk.create_pi("n_4");
+    const auto n_4i = ntk.create_not(n_4);
+    const auto n_5 = ntk.create_maj(n_2, n_3, n_4i);
+    const auto n_5i = ntk.create_not(n_5);
+    const auto n_6 = ntk.create_maj(n_1, n_2, n_5i);
+    const auto n_7 = ntk.create_and(n_2, n_3);
+    const auto n_7i = ntk.create_not(n_7);
+    const auto n_8 = ntk.create_maj(n_1, n_5, n_7i);
+    const auto n_8i = ntk.create_not(n_8);
+    const auto n_9 = ntk.create_and(n_7, n_8i);
+    const auto n_10 = ntk.create_maj(n_2, n_3, n_8);
+    const auto n_11 = ntk.create_maj(n_1, n_5i, n_10);
+    const auto n_12 = ntk.create_maj(n_4, n_9, n_11);
+    const auto n_13 = ntk.create_maj(n_1, n_5i, n_8);
+    const auto n_14 = ntk.create_maj(n_1, n_4, n_13);
+    ntk.create_po(n_6, "po0");
+    ntk.create_po(n_12, "po1");
+    ntk.create_po(n_14, "po2");
+
+    return ntk;
+}
