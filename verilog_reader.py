@@ -2,7 +2,10 @@ import re
 
 network_name = []
 
-with open('ISCAS85/c6288.v', 'r') as reader:
+file_name = "c7552"
+folder_name = "ISCAS85"
+
+with open('{}/{}.v'.format(folder_name, file_name), 'r') as reader:
     line = reader.readline()
     # print(reader.readline)
     # while line != '':  # The EOF char is an empty string
@@ -15,12 +18,12 @@ with open('ISCAS85/c6288.v', 'r') as reader:
 
     network_name = re.split('\.|/', str(reader.name))
 
-with open('ISCAS85_blueprints/c6288.txt', 'w') as writer:
+with open('{}_blueprints/{}.txt'.format(folder_name, file_name), 'w') as writer:
     # Alternatively you could use
     # writer.writelines(reversed(dog_breeds))
     
     writer.write("template <typename Ntk>\n")
-    writer.write("mockturtle::names_view<Ntk> {}()\n".format(network_name[1]))
+    writer.write("mockturtle::names_view<Ntk> {}_{}()\n".format(folder_name, network_name[1]))
     writer.write("{\n")
     writer.write("    mockturtle::names_view<Ntk> ntk{};\n")
 
@@ -38,9 +41,16 @@ with open('ISCAS85_blueprints/c6288.txt', 'w') as writer:
 
     inverted_lines = []
     for new_line in full_text:
+        new_line = new_line.lower()
         new_line = new_line.replace(';', '')
         new_line = new_line.replace(',', '')
         res = new_line.split()
+        r_it = 0
+        for r in res:
+            if r[-1] == "_":
+                res[r_it] = res[r_it][:-1]
+            r_it += 1
+        # print(res)
         if(len(res)==6):
             check = ""
             check = res[3].replace('~', '')
@@ -70,9 +80,22 @@ with open('ISCAS85_blueprints/c6288.txt', 'w') as writer:
                 if(res[5][0].isdigit()):
                     res[5] =  "x" + res[5]
                 inverted_lines.append(res[5])
-    print(inverted_lines)
+    # print(inverted_lines)
+
+    place_0_const = False
+    place_1_const = False
 
     for new_line in full_text:
+        new_line = new_line.lower()
+        res = new_line.split()
+        if "1'b0" in new_line:
+            place_0_const = True
+        if "1'b1" in new_line:
+            place_1_const = True
+
+
+    for new_line in full_text:
+        new_line = new_line.lower()
         inv_one_sign = ""
         inv_two_sign = ""
         
@@ -99,6 +122,11 @@ with open('ISCAS85_blueprints/c6288.txt', 'w') as writer:
                 new_line = new_line.replace(';', '')
                 new_line = new_line.replace(',', '')
                 res = new_line.split()
+                r_it = 0
+                for r in res:
+                    if r[-1] == "_":
+                        res[r_it] = res[r_it][:-1]
+                    r_it += 1
 
                 if(len(res) == 6):
                     if("~" in res[3]):
@@ -134,6 +162,13 @@ with open('ISCAS85_blueprints/c6288.txt', 'w') as writer:
                     pass
                 
                 elif(res[0] == "input"):
+                    if(place_0_const == True):
+                        writer.write("    const auto const0 = ntk.create_pi(\"const0\");\n")
+                        place_0_const = False
+                    if(place_1_const == True):
+                        writer.write("    const auto const1 = ntk.create_pi(\"const1\");\n")
+                        place_1_const = False
+
                     for input in res:
                         if(input != "input"):
                             if(input[0] == "\\"):
@@ -152,19 +187,47 @@ with open('ISCAS85_blueprints/c6288.txt', 'w') as writer:
                                 output =  "x" + output
                             output_storage.append("    ntk.create_po({}, \"{}\");\n".format(output, output))
                 
-                elif(4 <len(res)<6):
+                elif(3 <len(res)<6):
                     if("~" in res[3]):
-                        res[3] = res[3][1]
+                        res[3] = res[3][1:]
                         if(res[1][0] == "\\"):
                             res[1] = res[1].replace('\\', '')
+                        
                         if(res[1][0].isdigit()):
                             res[1] =  "x" + res[1]
+                        
                         if(res[3][0] == "\\"):
                             res[3] = res[3].replace('\\', '')
+                        
                         if(res[3][0].isdigit()):
                             res[3] =  "x" + res[3]
                         writer.write("    const auto {} = ntk.create_not({});\n".format(res[1], res[3]))
-                elif(len(res)<5):
+                    else:
+                        if(res[1][0] == "\\"):
+                            res[1] = res[1].replace('\\', '')
+                        
+                        if(res[1][0].isdigit()):
+                            res[1] =  "x" + res[1]
+                        
+                        if(res[3][0] == "\\"):
+                            res[3] = res[3].replace('\\', '')
+                        
+                        if(res[3][0].isdigit()):
+                            res[3] =  "x" + res[3]
+                        for o in output_storage:
+                            string = res[1] + ","
+                            if string in o:
+                                output_storage.remove(o)
+                        print(res)
+                        if (res[3] =="x1'b0"):
+                            output_storage.append("    ntk.create_po(const0, \"{}\");\n".format(res[1]))
+                        elif (res[3] =="x1'b1"):
+                            output_storage.append("    ntk.create_po(const1, \"{}\");\n".format(res[1]))
+                        else:
+                            output_storage.append("    ntk.create_po({}, \"{}\");\n".format(res[3], res[1]))
+                        
+                        
+                elif(len(res)<4):
                     print(res)   
 
                 elif(res[4] == "&"):

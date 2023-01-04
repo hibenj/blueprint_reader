@@ -1,0 +1,28 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> 1bitAdderAOIG()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto x = ntk.create_pi("x");
+    const auto y = ntk.create_pi("y");
+    const auto z = ntk.create_pi("z");
+    const auto ny = ntk.create_not(y);
+    const auto nz = ntk.create_not(z);
+    const auto new_n6 = ntk.create_and(ny, nz);
+    const auto new_n7 = ntk.create_and(y, z);
+    const auto nnew_n6 = ntk.create_not(new_n6);
+    const auto nnew_n7 = ntk.create_not(new_n7);
+    const auto new_n8 = ntk.create_and(nnew_n6, nnew_n7);
+    const auto nx = ntk.create_not(x);
+    const auto nnew_n8 = ntk.create_not(new_n8);
+    const auto new_n9 = ntk.create_and(nx, nnew_n8);
+    const auto new_n10 = ntk.create_and(x, new_n8);
+    const auto nnew_n9 = ntk.create_not(new_n9);
+    const auto nnew_n10 = ntk.create_not(new_n10);
+    const auto h = ntk.create_and(nnew_n9, nnew_n10);
+    const auto i = ntk.create_or(new_n7, new_n10);
+
+    ntk.create_po(h, "h");
+    ntk.create_po(i, "i");
+
+    return ntk;
+}

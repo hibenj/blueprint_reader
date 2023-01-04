@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> c6288()
+mockturtle::names_view<Ntk> ISCAS85_c6288()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto x1 = ntk.create_pi("x1");

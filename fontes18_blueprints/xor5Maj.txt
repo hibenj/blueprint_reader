@@ -1,0 +1,72 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> xor5Maj()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto x = ntk.create_pi("x");
+    const auto y = ntk.create_pi("y");
+    const auto z = ntk.create_pi("z");
+    const auto p = ntk.create_pi("p");
+    const auto q = ntk.create_pi("q");
+    const auto nx = ntk.create_not(x);
+    const auto ny = ntk.create_not(y);
+    const auto new_n7_ = ntk.create_and(nx, ny);
+    const auto nz = ntk.create_not(z);
+    const auto new_n8_ = ntk.create_and(ny, nz);
+    const auto nnew_n7_ = ntk.create_not(new_n7_);
+    const auto nnew_n8_ = ntk.create_not(new_n8_);
+    const auto new_n9_ = ntk.create_and(nnew_n7_, nnew_n8_);
+    const auto new_n10_ = ntk.create_and(nx, nz);
+    const auto nnew_n10_ = ntk.create_not(new_n10_);
+    const auto new_n11_ = ntk.create_and(new_n9_, nnew_n10_);
+    const auto new_n12_ = ntk.create_and(nx, y);
+    const auto new_n13_ = ntk.create_and(y, z);
+    const auto nnew_n12_ = ntk.create_not(new_n12_);
+    const auto nnew_n13_ = ntk.create_not(new_n13_);
+    const auto new_n14_ = ntk.create_and(nnew_n12_, nnew_n13_);
+    const auto new_n15_ = ntk.create_and(nx, z);
+    const auto nnew_n15_ = ntk.create_not(new_n15_);
+    const auto new_n16_ = ntk.create_and(new_n14_, nnew_n15_);
+    const auto nnew_n11_ = ntk.create_not(new_n11_);
+    const auto nnew_n16_ = ntk.create_not(new_n16_);
+    const auto new_n17_ = ntk.create_and(nnew_n11_, nnew_n16_);
+    const auto new_n18_ = ntk.create_and(x, nnew_n11_);
+    const auto new_n19_ = ntk.create_and(x, nnew_n16_);
+    const auto nnew_n18_ = ntk.create_not(new_n18_);
+    const auto nnew_n19_ = ntk.create_not(new_n19_);
+    const auto new_n20_ = ntk.create_and(nnew_n18_, nnew_n19_);
+    const auto nnew_n17_ = ntk.create_not(new_n17_);
+    const auto new_n21_ = ntk.create_and(nnew_n17_, new_n20_);
+    const auto np = ntk.create_not(p);
+    const auto new_n22_ = ntk.create_and(np, new_n21_);
+    const auto nq = ntk.create_not(q);
+    const auto new_n23_ = ntk.create_and(nq, new_n21_);
+    const auto new_n24_ = ntk.create_and(np, nq);
+    const auto nnew_n23_ = ntk.create_not(new_n23_);
+    const auto nnew_n24_ = ntk.create_not(new_n24_);
+    const auto new_n25_ = ntk.create_and(nnew_n23_, nnew_n24_);
+    const auto nnew_n22_ = ntk.create_not(new_n22_);
+    const auto new_n26_ = ntk.create_and(nnew_n22_, new_n25_);
+    const auto new_n27_ = ntk.create_and(p, q);
+    const auto new_n28_ = ntk.create_and(p, new_n21_);
+    const auto nnew_n27_ = ntk.create_not(new_n27_);
+    const auto nnew_n28_ = ntk.create_not(new_n28_);
+    const auto new_n29_ = ntk.create_and(nnew_n27_, nnew_n28_);
+    const auto new_n30_ = ntk.create_and(q, new_n21_);
+    const auto nnew_n30_ = ntk.create_not(new_n30_);
+    const auto new_n31_ = ntk.create_and(new_n29_, nnew_n30_);
+    const auto nnew_n26_ = ntk.create_not(new_n26_);
+    const auto nnew_n31_ = ntk.create_not(new_n31_);
+    const auto new_n32_ = ntk.create_and(nnew_n26_, nnew_n31_);
+    const auto nnew_n21_ = ntk.create_not(new_n21_);
+    const auto new_n33_ = ntk.create_and(nnew_n21_, nnew_n26_);
+    const auto new_n34_ = ntk.create_and(nnew_n21_, nnew_n31_);
+    const auto nnew_n33_ = ntk.create_not(new_n33_);
+    const auto nnew_n34_ = ntk.create_not(new_n34_);
+    const auto new_n35_ = ntk.create_and(nnew_n33_, nnew_n34_);
+    const auto nnew_n35_ = ntk.create_not(new_n35_);
+    const auto M6 = ntk.create_or(new_n32_, new_n35_);
+
+    ntk.create_po(M6, "M6");
+
+    return ntk;
+}

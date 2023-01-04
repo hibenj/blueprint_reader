@@ -1,0 +1,16 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> xor()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto x = ntk.create_pi("x");
+    const auto y = ntk.create_pi("y");
+    const auto nx = ntk.create_not(x);
+    const auto new_n4_ = ntk.create_and(nx, y);
+    const auto ny = ntk.create_not(y);
+    const auto new_n5_ = ntk.create_and(x, ny);
+    const auto XOR = ntk.create_or(new_n4_, new_n5_);
+
+    ntk.create_po(XOR, "XOR");
+
+    return ntk;
+}

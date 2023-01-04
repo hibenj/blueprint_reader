@@ -1,0 +1,18 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> HA()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto x = ntk.create_pi("x");
+    const auto y = ntk.create_pi("y");
+    const auto cout = ntk.create_and(x, y);
+    const auto nx = ntk.create_not(x);
+    const auto w1 = ntk.create_and(nx, y);
+    const auto ny = ntk.create_not(y);
+    const auto w2 = ntk.create_and(x, ny);
+    const auto s = ntk.create_or(w1, w2);
+
+    ntk.create_po(s, "s");
+    ntk.create_po(cout, "cout");
+
+    return ntk;
+}

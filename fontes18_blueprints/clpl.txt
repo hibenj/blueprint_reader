@@ -1,0 +1,34 @@
+template <typename Ntk>
+mockturtle::names_view<Ntk> clpl()
+{
+    mockturtle::names_view<Ntk> ntk{};
+    const auto pi00 = ntk.create_pi("pi00");
+    const auto pi01 = ntk.create_pi("pi01");
+    const auto pi02 = ntk.create_pi("pi02");
+    const auto pi03 = ntk.create_pi("pi03");
+    const auto pi04 = ntk.create_pi("pi04");
+    const auto pi05 = ntk.create_pi("pi05");
+    const auto pi06 = ntk.create_pi("pi06");
+    const auto pi07 = ntk.create_pi("pi07");
+    const auto pi08 = ntk.create_pi("pi08");
+    const auto pi09 = ntk.create_pi("pi09");
+    const auto pi10 = ntk.create_pi("pi10");
+    const auto new_n17_ = ntk.create_and(pi00, pi04);
+    const auto po2 = ntk.create_or(pi02, new_n17_);
+    const auto new_n19_ = ntk.create_and(pi05, po2);
+    const auto po1 = ntk.create_or(pi03, new_n19_);
+    const auto new_n21_ = ntk.create_and(pi06, po1);
+    const auto po0 = ntk.create_or(pi01, new_n21_);
+    const auto new_n23_ = ntk.create_and(pi08, po0);
+    const auto po4 = ntk.create_or(pi07, new_n23_);
+    const auto new_n25_ = ntk.create_and(pi09, po4);
+    const auto po3 = ntk.create_or(pi10, new_n25_);
+
+    ntk.create_po(po0, "po0");
+    ntk.create_po(po1, "po1");
+    ntk.create_po(po2, "po2");
+    ntk.create_po(po3, "po3");
+    ntk.create_po(po4, "po4");
+
+    return ntk;
+}

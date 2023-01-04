@@ -2,11 +2,10 @@ import re
 
 network_name = []
 
-benchmark_name = ["b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08", "b09", "b10", 
-                    "b11", "b12", "b13", "b14", "b15", "b17", "b18", "b19", "b20", 
-                    "b21", "b22", "b30"]
+benchmark_name = ["b18"] # "b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08", "b09", "b10", 
+                    # "b11", "b12", "b13", "b14", "b15", "b17", , "b19", "b20", "b21", "b22"
 
-benchmark_type = ["", "_opt", "_opt_r"]
+benchmark_type = [""] # , "_opt", "_opt_r"
 
 for b_n in benchmark_name:
     for b_t in benchmark_type:
@@ -345,7 +344,6 @@ for b_n in benchmark_name:
                         print(res)
             
             go_ahead = False
-            i = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
             while(go_ahead == False):
                 go_ahead = True
                 iterator = 0

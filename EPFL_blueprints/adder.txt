@@ -258,10 +258,14 @@ mockturtle::names_view<Ntk> adder()
     const auto b125 = ntk.create_pi("b125");
     const auto b126 = ntk.create_pi("b126");
     const auto b127 = ntk.create_pi("b127");
+    const auto nb0 = ntk.create_not(b0);
     const auto n386 = ntk.create_and(a0, nb0);
+    const auto na0 = ntk.create_not(a0);
     const auto n387 = ntk.create_and(na0, b0);
     const auto f0 = ntk.create_or(n386, n387);
     const auto n389 = ntk.create_and(a0, b0);
+    const auto na1 = ntk.create_not(a1);
+    const auto nb1 = ntk.create_not(b1);
     const auto n390 = ntk.create_and(na1, nb1);
     const auto n391 = ntk.create_and(a1, b1);
     const auto nn390 = ntk.create_not(n390);
@@ -275,6 +279,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n396 = ntk.create_and(n389, nn390);
     const auto nn396 = ntk.create_not(n396);
     const auto n397 = ntk.create_and(nn391, nn396);
+    const auto na2 = ntk.create_not(a2);
+    const auto nb2 = ntk.create_not(b2);
     const auto n398 = ntk.create_and(na2, nb2);
     const auto n399 = ntk.create_and(a2, b2);
     const auto nn398 = ntk.create_not(n398);
@@ -290,6 +296,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n404 = ntk.create_and(nn397, nn398);
     const auto nn404 = ntk.create_not(n404);
     const auto n405 = ntk.create_and(nn399, nn404);
+    const auto na3 = ntk.create_not(a3);
+    const auto nb3 = ntk.create_not(b3);
     const auto n406 = ntk.create_and(na3, nb3);
     const auto n407 = ntk.create_and(a3, b3);
     const auto nn406 = ntk.create_not(n406);
@@ -305,6 +313,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n412 = ntk.create_and(nn405, nn406);
     const auto nn412 = ntk.create_not(n412);
     const auto n413 = ntk.create_and(nn407, nn412);
+    const auto na4 = ntk.create_not(a4);
+    const auto nb4 = ntk.create_not(b4);
     const auto n414 = ntk.create_and(na4, nb4);
     const auto n415 = ntk.create_and(a4, b4);
     const auto nn414 = ntk.create_not(n414);
@@ -320,6 +330,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n420 = ntk.create_and(nn413, nn414);
     const auto nn420 = ntk.create_not(n420);
     const auto n421 = ntk.create_and(nn415, nn420);
+    const auto na5 = ntk.create_not(a5);
+    const auto nb5 = ntk.create_not(b5);
     const auto n422 = ntk.create_and(na5, nb5);
     const auto n423 = ntk.create_and(a5, b5);
     const auto nn422 = ntk.create_not(n422);
@@ -335,6 +347,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n428 = ntk.create_and(nn421, nn422);
     const auto nn428 = ntk.create_not(n428);
     const auto n429 = ntk.create_and(nn423, nn428);
+    const auto na6 = ntk.create_not(a6);
+    const auto nb6 = ntk.create_not(b6);
     const auto n430 = ntk.create_and(na6, nb6);
     const auto n431 = ntk.create_and(a6, b6);
     const auto nn430 = ntk.create_not(n430);
@@ -350,6 +364,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n436 = ntk.create_and(nn429, nn430);
     const auto nn436 = ntk.create_not(n436);
     const auto n437 = ntk.create_and(nn431, nn436);
+    const auto na7 = ntk.create_not(a7);
+    const auto nb7 = ntk.create_not(b7);
     const auto n438 = ntk.create_and(na7, nb7);
     const auto n439 = ntk.create_and(a7, b7);
     const auto nn438 = ntk.create_not(n438);
@@ -365,6 +381,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n444 = ntk.create_and(nn437, nn438);
     const auto nn444 = ntk.create_not(n444);
     const auto n445 = ntk.create_and(nn439, nn444);
+    const auto na8 = ntk.create_not(a8);
+    const auto nb8 = ntk.create_not(b8);
     const auto n446 = ntk.create_and(na8, nb8);
     const auto n447 = ntk.create_and(a8, b8);
     const auto nn446 = ntk.create_not(n446);
@@ -380,6 +398,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n452 = ntk.create_and(nn445, nn446);
     const auto nn452 = ntk.create_not(n452);
     const auto n453 = ntk.create_and(nn447, nn452);
+    const auto na9 = ntk.create_not(a9);
+    const auto nb9 = ntk.create_not(b9);
     const auto n454 = ntk.create_and(na9, nb9);
     const auto n455 = ntk.create_and(a9, b9);
     const auto nn454 = ntk.create_not(n454);
@@ -395,6 +415,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n460 = ntk.create_and(nn453, nn454);
     const auto nn460 = ntk.create_not(n460);
     const auto n461 = ntk.create_and(nn455, nn460);
+    const auto na10 = ntk.create_not(a10);
+    const auto nb10 = ntk.create_not(b10);
     const auto n462 = ntk.create_and(na10, nb10);
     const auto n463 = ntk.create_and(a10, b10);
     const auto nn462 = ntk.create_not(n462);
@@ -410,6 +432,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n468 = ntk.create_and(nn461, nn462);
     const auto nn468 = ntk.create_not(n468);
     const auto n469 = ntk.create_and(nn463, nn468);
+    const auto na11 = ntk.create_not(a11);
+    const auto nb11 = ntk.create_not(b11);
     const auto n470 = ntk.create_and(na11, nb11);
     const auto n471 = ntk.create_and(a11, b11);
     const auto nn470 = ntk.create_not(n470);
@@ -425,6 +449,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n476 = ntk.create_and(nn469, nn470);
     const auto nn476 = ntk.create_not(n476);
     const auto n477 = ntk.create_and(nn471, nn476);
+    const auto na12 = ntk.create_not(a12);
+    const auto nb12 = ntk.create_not(b12);
     const auto n478 = ntk.create_and(na12, nb12);
     const auto n479 = ntk.create_and(a12, b12);
     const auto nn478 = ntk.create_not(n478);
@@ -440,6 +466,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n484 = ntk.create_and(nn477, nn478);
     const auto nn484 = ntk.create_not(n484);
     const auto n485 = ntk.create_and(nn479, nn484);
+    const auto na13 = ntk.create_not(a13);
+    const auto nb13 = ntk.create_not(b13);
     const auto n486 = ntk.create_and(na13, nb13);
     const auto n487 = ntk.create_and(a13, b13);
     const auto nn486 = ntk.create_not(n486);
@@ -455,6 +483,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n492 = ntk.create_and(nn485, nn486);
     const auto nn492 = ntk.create_not(n492);
     const auto n493 = ntk.create_and(nn487, nn492);
+    const auto na14 = ntk.create_not(a14);
+    const auto nb14 = ntk.create_not(b14);
     const auto n494 = ntk.create_and(na14, nb14);
     const auto n495 = ntk.create_and(a14, b14);
     const auto nn494 = ntk.create_not(n494);
@@ -470,6 +500,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n500 = ntk.create_and(nn493, nn494);
     const auto nn500 = ntk.create_not(n500);
     const auto n501 = ntk.create_and(nn495, nn500);
+    const auto na15 = ntk.create_not(a15);
+    const auto nb15 = ntk.create_not(b15);
     const auto n502 = ntk.create_and(na15, nb15);
     const auto n503 = ntk.create_and(a15, b15);
     const auto nn502 = ntk.create_not(n502);
@@ -485,6 +517,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n508 = ntk.create_and(nn501, nn502);
     const auto nn508 = ntk.create_not(n508);
     const auto n509 = ntk.create_and(nn503, nn508);
+    const auto na16 = ntk.create_not(a16);
+    const auto nb16 = ntk.create_not(b16);
     const auto n510 = ntk.create_and(na16, nb16);
     const auto n511 = ntk.create_and(a16, b16);
     const auto nn510 = ntk.create_not(n510);
@@ -500,6 +534,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n516 = ntk.create_and(nn509, nn510);
     const auto nn516 = ntk.create_not(n516);
     const auto n517 = ntk.create_and(nn511, nn516);
+    const auto na17 = ntk.create_not(a17);
+    const auto nb17 = ntk.create_not(b17);
     const auto n518 = ntk.create_and(na17, nb17);
     const auto n519 = ntk.create_and(a17, b17);
     const auto nn518 = ntk.create_not(n518);
@@ -515,6 +551,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n524 = ntk.create_and(nn517, nn518);
     const auto nn524 = ntk.create_not(n524);
     const auto n525 = ntk.create_and(nn519, nn524);
+    const auto na18 = ntk.create_not(a18);
+    const auto nb18 = ntk.create_not(b18);
     const auto n526 = ntk.create_and(na18, nb18);
     const auto n527 = ntk.create_and(a18, b18);
     const auto nn526 = ntk.create_not(n526);
@@ -530,6 +568,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n532 = ntk.create_and(nn525, nn526);
     const auto nn532 = ntk.create_not(n532);
     const auto n533 = ntk.create_and(nn527, nn532);
+    const auto na19 = ntk.create_not(a19);
+    const auto nb19 = ntk.create_not(b19);
     const auto n534 = ntk.create_and(na19, nb19);
     const auto n535 = ntk.create_and(a19, b19);
     const auto nn534 = ntk.create_not(n534);
@@ -545,6 +585,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n540 = ntk.create_and(nn533, nn534);
     const auto nn540 = ntk.create_not(n540);
     const auto n541 = ntk.create_and(nn535, nn540);
+    const auto na20 = ntk.create_not(a20);
+    const auto nb20 = ntk.create_not(b20);
     const auto n542 = ntk.create_and(na20, nb20);
     const auto n543 = ntk.create_and(a20, b20);
     const auto nn542 = ntk.create_not(n542);
@@ -560,6 +602,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n548 = ntk.create_and(nn541, nn542);
     const auto nn548 = ntk.create_not(n548);
     const auto n549 = ntk.create_and(nn543, nn548);
+    const auto na21 = ntk.create_not(a21);
+    const auto nb21 = ntk.create_not(b21);
     const auto n550 = ntk.create_and(na21, nb21);
     const auto n551 = ntk.create_and(a21, b21);
     const auto nn550 = ntk.create_not(n550);
@@ -575,6 +619,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n556 = ntk.create_and(nn549, nn550);
     const auto nn556 = ntk.create_not(n556);
     const auto n557 = ntk.create_and(nn551, nn556);
+    const auto na22 = ntk.create_not(a22);
+    const auto nb22 = ntk.create_not(b22);
     const auto n558 = ntk.create_and(na22, nb22);
     const auto n559 = ntk.create_and(a22, b22);
     const auto nn558 = ntk.create_not(n558);
@@ -590,6 +636,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n564 = ntk.create_and(nn557, nn558);
     const auto nn564 = ntk.create_not(n564);
     const auto n565 = ntk.create_and(nn559, nn564);
+    const auto na23 = ntk.create_not(a23);
+    const auto nb23 = ntk.create_not(b23);
     const auto n566 = ntk.create_and(na23, nb23);
     const auto n567 = ntk.create_and(a23, b23);
     const auto nn566 = ntk.create_not(n566);
@@ -605,6 +653,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n572 = ntk.create_and(nn565, nn566);
     const auto nn572 = ntk.create_not(n572);
     const auto n573 = ntk.create_and(nn567, nn572);
+    const auto na24 = ntk.create_not(a24);
+    const auto nb24 = ntk.create_not(b24);
     const auto n574 = ntk.create_and(na24, nb24);
     const auto n575 = ntk.create_and(a24, b24);
     const auto nn574 = ntk.create_not(n574);
@@ -620,6 +670,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n580 = ntk.create_and(nn573, nn574);
     const auto nn580 = ntk.create_not(n580);
     const auto n581 = ntk.create_and(nn575, nn580);
+    const auto na25 = ntk.create_not(a25);
+    const auto nb25 = ntk.create_not(b25);
     const auto n582 = ntk.create_and(na25, nb25);
     const auto n583 = ntk.create_and(a25, b25);
     const auto nn582 = ntk.create_not(n582);
@@ -635,6 +687,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n588 = ntk.create_and(nn581, nn582);
     const auto nn588 = ntk.create_not(n588);
     const auto n589 = ntk.create_and(nn583, nn588);
+    const auto na26 = ntk.create_not(a26);
+    const auto nb26 = ntk.create_not(b26);
     const auto n590 = ntk.create_and(na26, nb26);
     const auto n591 = ntk.create_and(a26, b26);
     const auto nn590 = ntk.create_not(n590);
@@ -650,6 +704,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n596 = ntk.create_and(nn589, nn590);
     const auto nn596 = ntk.create_not(n596);
     const auto n597 = ntk.create_and(nn591, nn596);
+    const auto na27 = ntk.create_not(a27);
+    const auto nb27 = ntk.create_not(b27);
     const auto n598 = ntk.create_and(na27, nb27);
     const auto n599 = ntk.create_and(a27, b27);
     const auto nn598 = ntk.create_not(n598);
@@ -665,6 +721,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n604 = ntk.create_and(nn597, nn598);
     const auto nn604 = ntk.create_not(n604);
     const auto n605 = ntk.create_and(nn599, nn604);
+    const auto na28 = ntk.create_not(a28);
+    const auto nb28 = ntk.create_not(b28);
     const auto n606 = ntk.create_and(na28, nb28);
     const auto n607 = ntk.create_and(a28, b28);
     const auto nn606 = ntk.create_not(n606);
@@ -680,6 +738,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n612 = ntk.create_and(nn605, nn606);
     const auto nn612 = ntk.create_not(n612);
     const auto n613 = ntk.create_and(nn607, nn612);
+    const auto na29 = ntk.create_not(a29);
+    const auto nb29 = ntk.create_not(b29);
     const auto n614 = ntk.create_and(na29, nb29);
     const auto n615 = ntk.create_and(a29, b29);
     const auto nn614 = ntk.create_not(n614);
@@ -695,6 +755,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n620 = ntk.create_and(nn613, nn614);
     const auto nn620 = ntk.create_not(n620);
     const auto n621 = ntk.create_and(nn615, nn620);
+    const auto na30 = ntk.create_not(a30);
+    const auto nb30 = ntk.create_not(b30);
     const auto n622 = ntk.create_and(na30, nb30);
     const auto n623 = ntk.create_and(a30, b30);
     const auto nn622 = ntk.create_not(n622);
@@ -710,6 +772,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n628 = ntk.create_and(nn621, nn622);
     const auto nn628 = ntk.create_not(n628);
     const auto n629 = ntk.create_and(nn623, nn628);
+    const auto na31 = ntk.create_not(a31);
+    const auto nb31 = ntk.create_not(b31);
     const auto n630 = ntk.create_and(na31, nb31);
     const auto n631 = ntk.create_and(a31, b31);
     const auto nn630 = ntk.create_not(n630);
@@ -725,6 +789,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n636 = ntk.create_and(nn629, nn630);
     const auto nn636 = ntk.create_not(n636);
     const auto n637 = ntk.create_and(nn631, nn636);
+    const auto na32 = ntk.create_not(a32);
+    const auto nb32 = ntk.create_not(b32);
     const auto n638 = ntk.create_and(na32, nb32);
     const auto n639 = ntk.create_and(a32, b32);
     const auto nn638 = ntk.create_not(n638);
@@ -740,6 +806,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n644 = ntk.create_and(nn637, nn638);
     const auto nn644 = ntk.create_not(n644);
     const auto n645 = ntk.create_and(nn639, nn644);
+    const auto na33 = ntk.create_not(a33);
+    const auto nb33 = ntk.create_not(b33);
     const auto n646 = ntk.create_and(na33, nb33);
     const auto n647 = ntk.create_and(a33, b33);
     const auto nn646 = ntk.create_not(n646);
@@ -755,6 +823,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n652 = ntk.create_and(nn645, nn646);
     const auto nn652 = ntk.create_not(n652);
     const auto n653 = ntk.create_and(nn647, nn652);
+    const auto na34 = ntk.create_not(a34);
+    const auto nb34 = ntk.create_not(b34);
     const auto n654 = ntk.create_and(na34, nb34);
     const auto n655 = ntk.create_and(a34, b34);
     const auto nn654 = ntk.create_not(n654);
@@ -770,6 +840,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n660 = ntk.create_and(nn653, nn654);
     const auto nn660 = ntk.create_not(n660);
     const auto n661 = ntk.create_and(nn655, nn660);
+    const auto na35 = ntk.create_not(a35);
+    const auto nb35 = ntk.create_not(b35);
     const auto n662 = ntk.create_and(na35, nb35);
     const auto n663 = ntk.create_and(a35, b35);
     const auto nn662 = ntk.create_not(n662);
@@ -785,6 +857,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n668 = ntk.create_and(nn661, nn662);
     const auto nn668 = ntk.create_not(n668);
     const auto n669 = ntk.create_and(nn663, nn668);
+    const auto na36 = ntk.create_not(a36);
+    const auto nb36 = ntk.create_not(b36);
     const auto n670 = ntk.create_and(na36, nb36);
     const auto n671 = ntk.create_and(a36, b36);
     const auto nn670 = ntk.create_not(n670);
@@ -800,6 +874,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n676 = ntk.create_and(nn669, nn670);
     const auto nn676 = ntk.create_not(n676);
     const auto n677 = ntk.create_and(nn671, nn676);
+    const auto na37 = ntk.create_not(a37);
+    const auto nb37 = ntk.create_not(b37);
     const auto n678 = ntk.create_and(na37, nb37);
     const auto n679 = ntk.create_and(a37, b37);
     const auto nn678 = ntk.create_not(n678);
@@ -815,6 +891,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n684 = ntk.create_and(nn677, nn678);
     const auto nn684 = ntk.create_not(n684);
     const auto n685 = ntk.create_and(nn679, nn684);
+    const auto na38 = ntk.create_not(a38);
+    const auto nb38 = ntk.create_not(b38);
     const auto n686 = ntk.create_and(na38, nb38);
     const auto n687 = ntk.create_and(a38, b38);
     const auto nn686 = ntk.create_not(n686);
@@ -830,6 +908,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n692 = ntk.create_and(nn685, nn686);
     const auto nn692 = ntk.create_not(n692);
     const auto n693 = ntk.create_and(nn687, nn692);
+    const auto na39 = ntk.create_not(a39);
+    const auto nb39 = ntk.create_not(b39);
     const auto n694 = ntk.create_and(na39, nb39);
     const auto n695 = ntk.create_and(a39, b39);
     const auto nn694 = ntk.create_not(n694);
@@ -845,6 +925,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n700 = ntk.create_and(nn693, nn694);
     const auto nn700 = ntk.create_not(n700);
     const auto n701 = ntk.create_and(nn695, nn700);
+    const auto na40 = ntk.create_not(a40);
+    const auto nb40 = ntk.create_not(b40);
     const auto n702 = ntk.create_and(na40, nb40);
     const auto n703 = ntk.create_and(a40, b40);
     const auto nn702 = ntk.create_not(n702);
@@ -860,6 +942,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n708 = ntk.create_and(nn701, nn702);
     const auto nn708 = ntk.create_not(n708);
     const auto n709 = ntk.create_and(nn703, nn708);
+    const auto na41 = ntk.create_not(a41);
+    const auto nb41 = ntk.create_not(b41);
     const auto n710 = ntk.create_and(na41, nb41);
     const auto n711 = ntk.create_and(a41, b41);
     const auto nn710 = ntk.create_not(n710);
@@ -875,6 +959,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n716 = ntk.create_and(nn709, nn710);
     const auto nn716 = ntk.create_not(n716);
     const auto n717 = ntk.create_and(nn711, nn716);
+    const auto na42 = ntk.create_not(a42);
+    const auto nb42 = ntk.create_not(b42);
     const auto n718 = ntk.create_and(na42, nb42);
     const auto n719 = ntk.create_and(a42, b42);
     const auto nn718 = ntk.create_not(n718);
@@ -890,6 +976,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n724 = ntk.create_and(nn717, nn718);
     const auto nn724 = ntk.create_not(n724);
     const auto n725 = ntk.create_and(nn719, nn724);
+    const auto na43 = ntk.create_not(a43);
+    const auto nb43 = ntk.create_not(b43);
     const auto n726 = ntk.create_and(na43, nb43);
     const auto n727 = ntk.create_and(a43, b43);
     const auto nn726 = ntk.create_not(n726);
@@ -905,6 +993,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n732 = ntk.create_and(nn725, nn726);
     const auto nn732 = ntk.create_not(n732);
     const auto n733 = ntk.create_and(nn727, nn732);
+    const auto na44 = ntk.create_not(a44);
+    const auto nb44 = ntk.create_not(b44);
     const auto n734 = ntk.create_and(na44, nb44);
     const auto n735 = ntk.create_and(a44, b44);
     const auto nn734 = ntk.create_not(n734);
@@ -920,6 +1010,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n740 = ntk.create_and(nn733, nn734);
     const auto nn740 = ntk.create_not(n740);
     const auto n741 = ntk.create_and(nn735, nn740);
+    const auto na45 = ntk.create_not(a45);
+    const auto nb45 = ntk.create_not(b45);
     const auto n742 = ntk.create_and(na45, nb45);
     const auto n743 = ntk.create_and(a45, b45);
     const auto nn742 = ntk.create_not(n742);
@@ -935,6 +1027,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n748 = ntk.create_and(nn741, nn742);
     const auto nn748 = ntk.create_not(n748);
     const auto n749 = ntk.create_and(nn743, nn748);
+    const auto na46 = ntk.create_not(a46);
+    const auto nb46 = ntk.create_not(b46);
     const auto n750 = ntk.create_and(na46, nb46);
     const auto n751 = ntk.create_and(a46, b46);
     const auto nn750 = ntk.create_not(n750);
@@ -950,6 +1044,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n756 = ntk.create_and(nn749, nn750);
     const auto nn756 = ntk.create_not(n756);
     const auto n757 = ntk.create_and(nn751, nn756);
+    const auto na47 = ntk.create_not(a47);
+    const auto nb47 = ntk.create_not(b47);
     const auto n758 = ntk.create_and(na47, nb47);
     const auto n759 = ntk.create_and(a47, b47);
     const auto nn758 = ntk.create_not(n758);
@@ -965,6 +1061,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n764 = ntk.create_and(nn757, nn758);
     const auto nn764 = ntk.create_not(n764);
     const auto n765 = ntk.create_and(nn759, nn764);
+    const auto na48 = ntk.create_not(a48);
+    const auto nb48 = ntk.create_not(b48);
     const auto n766 = ntk.create_and(na48, nb48);
     const auto n767 = ntk.create_and(a48, b48);
     const auto nn766 = ntk.create_not(n766);
@@ -980,6 +1078,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n772 = ntk.create_and(nn765, nn766);
     const auto nn772 = ntk.create_not(n772);
     const auto n773 = ntk.create_and(nn767, nn772);
+    const auto na49 = ntk.create_not(a49);
+    const auto nb49 = ntk.create_not(b49);
     const auto n774 = ntk.create_and(na49, nb49);
     const auto n775 = ntk.create_and(a49, b49);
     const auto nn774 = ntk.create_not(n774);
@@ -995,6 +1095,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n780 = ntk.create_and(nn773, nn774);
     const auto nn780 = ntk.create_not(n780);
     const auto n781 = ntk.create_and(nn775, nn780);
+    const auto na50 = ntk.create_not(a50);
+    const auto nb50 = ntk.create_not(b50);
     const auto n782 = ntk.create_and(na50, nb50);
     const auto n783 = ntk.create_and(a50, b50);
     const auto nn782 = ntk.create_not(n782);
@@ -1010,6 +1112,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n788 = ntk.create_and(nn781, nn782);
     const auto nn788 = ntk.create_not(n788);
     const auto n789 = ntk.create_and(nn783, nn788);
+    const auto na51 = ntk.create_not(a51);
+    const auto nb51 = ntk.create_not(b51);
     const auto n790 = ntk.create_and(na51, nb51);
     const auto n791 = ntk.create_and(a51, b51);
     const auto nn790 = ntk.create_not(n790);
@@ -1025,6 +1129,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n796 = ntk.create_and(nn789, nn790);
     const auto nn796 = ntk.create_not(n796);
     const auto n797 = ntk.create_and(nn791, nn796);
+    const auto na52 = ntk.create_not(a52);
+    const auto nb52 = ntk.create_not(b52);
     const auto n798 = ntk.create_and(na52, nb52);
     const auto n799 = ntk.create_and(a52, b52);
     const auto nn798 = ntk.create_not(n798);
@@ -1040,6 +1146,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n804 = ntk.create_and(nn797, nn798);
     const auto nn804 = ntk.create_not(n804);
     const auto n805 = ntk.create_and(nn799, nn804);
+    const auto na53 = ntk.create_not(a53);
+    const auto nb53 = ntk.create_not(b53);
     const auto n806 = ntk.create_and(na53, nb53);
     const auto n807 = ntk.create_and(a53, b53);
     const auto nn806 = ntk.create_not(n806);
@@ -1055,6 +1163,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n812 = ntk.create_and(nn805, nn806);
     const auto nn812 = ntk.create_not(n812);
     const auto n813 = ntk.create_and(nn807, nn812);
+    const auto na54 = ntk.create_not(a54);
+    const auto nb54 = ntk.create_not(b54);
     const auto n814 = ntk.create_and(na54, nb54);
     const auto n815 = ntk.create_and(a54, b54);
     const auto nn814 = ntk.create_not(n814);
@@ -1070,6 +1180,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n820 = ntk.create_and(nn813, nn814);
     const auto nn820 = ntk.create_not(n820);
     const auto n821 = ntk.create_and(nn815, nn820);
+    const auto na55 = ntk.create_not(a55);
+    const auto nb55 = ntk.create_not(b55);
     const auto n822 = ntk.create_and(na55, nb55);
     const auto n823 = ntk.create_and(a55, b55);
     const auto nn822 = ntk.create_not(n822);
@@ -1085,6 +1197,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n828 = ntk.create_and(nn821, nn822);
     const auto nn828 = ntk.create_not(n828);
     const auto n829 = ntk.create_and(nn823, nn828);
+    const auto na56 = ntk.create_not(a56);
+    const auto nb56 = ntk.create_not(b56);
     const auto n830 = ntk.create_and(na56, nb56);
     const auto n831 = ntk.create_and(a56, b56);
     const auto nn830 = ntk.create_not(n830);
@@ -1100,6 +1214,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n836 = ntk.create_and(nn829, nn830);
     const auto nn836 = ntk.create_not(n836);
     const auto n837 = ntk.create_and(nn831, nn836);
+    const auto na57 = ntk.create_not(a57);
+    const auto nb57 = ntk.create_not(b57);
     const auto n838 = ntk.create_and(na57, nb57);
     const auto n839 = ntk.create_and(a57, b57);
     const auto nn838 = ntk.create_not(n838);
@@ -1115,6 +1231,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n844 = ntk.create_and(nn837, nn838);
     const auto nn844 = ntk.create_not(n844);
     const auto n845 = ntk.create_and(nn839, nn844);
+    const auto na58 = ntk.create_not(a58);
+    const auto nb58 = ntk.create_not(b58);
     const auto n846 = ntk.create_and(na58, nb58);
     const auto n847 = ntk.create_and(a58, b58);
     const auto nn846 = ntk.create_not(n846);
@@ -1130,6 +1248,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n852 = ntk.create_and(nn845, nn846);
     const auto nn852 = ntk.create_not(n852);
     const auto n853 = ntk.create_and(nn847, nn852);
+    const auto na59 = ntk.create_not(a59);
+    const auto nb59 = ntk.create_not(b59);
     const auto n854 = ntk.create_and(na59, nb59);
     const auto n855 = ntk.create_and(a59, b59);
     const auto nn854 = ntk.create_not(n854);
@@ -1145,6 +1265,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n860 = ntk.create_and(nn853, nn854);
     const auto nn860 = ntk.create_not(n860);
     const auto n861 = ntk.create_and(nn855, nn860);
+    const auto na60 = ntk.create_not(a60);
+    const auto nb60 = ntk.create_not(b60);
     const auto n862 = ntk.create_and(na60, nb60);
     const auto n863 = ntk.create_and(a60, b60);
     const auto nn862 = ntk.create_not(n862);
@@ -1160,6 +1282,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n868 = ntk.create_and(nn861, nn862);
     const auto nn868 = ntk.create_not(n868);
     const auto n869 = ntk.create_and(nn863, nn868);
+    const auto na61 = ntk.create_not(a61);
+    const auto nb61 = ntk.create_not(b61);
     const auto n870 = ntk.create_and(na61, nb61);
     const auto n871 = ntk.create_and(a61, b61);
     const auto nn870 = ntk.create_not(n870);
@@ -1175,6 +1299,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n876 = ntk.create_and(nn869, nn870);
     const auto nn876 = ntk.create_not(n876);
     const auto n877 = ntk.create_and(nn871, nn876);
+    const auto na62 = ntk.create_not(a62);
+    const auto nb62 = ntk.create_not(b62);
     const auto n878 = ntk.create_and(na62, nb62);
     const auto n879 = ntk.create_and(a62, b62);
     const auto nn878 = ntk.create_not(n878);
@@ -1190,6 +1316,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n884 = ntk.create_and(nn877, nn878);
     const auto nn884 = ntk.create_not(n884);
     const auto n885 = ntk.create_and(nn879, nn884);
+    const auto na63 = ntk.create_not(a63);
+    const auto nb63 = ntk.create_not(b63);
     const auto n886 = ntk.create_and(na63, nb63);
     const auto n887 = ntk.create_and(a63, b63);
     const auto nn886 = ntk.create_not(n886);
@@ -1205,6 +1333,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n892 = ntk.create_and(nn885, nn886);
     const auto nn892 = ntk.create_not(n892);
     const auto n893 = ntk.create_and(nn887, nn892);
+    const auto na64 = ntk.create_not(a64);
+    const auto nb64 = ntk.create_not(b64);
     const auto n894 = ntk.create_and(na64, nb64);
     const auto n895 = ntk.create_and(a64, b64);
     const auto nn894 = ntk.create_not(n894);
@@ -1220,6 +1350,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n900 = ntk.create_and(nn893, nn894);
     const auto nn900 = ntk.create_not(n900);
     const auto n901 = ntk.create_and(nn895, nn900);
+    const auto na65 = ntk.create_not(a65);
+    const auto nb65 = ntk.create_not(b65);
     const auto n902 = ntk.create_and(na65, nb65);
     const auto n903 = ntk.create_and(a65, b65);
     const auto nn902 = ntk.create_not(n902);
@@ -1235,6 +1367,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n908 = ntk.create_and(nn901, nn902);
     const auto nn908 = ntk.create_not(n908);
     const auto n909 = ntk.create_and(nn903, nn908);
+    const auto na66 = ntk.create_not(a66);
+    const auto nb66 = ntk.create_not(b66);
     const auto n910 = ntk.create_and(na66, nb66);
     const auto n911 = ntk.create_and(a66, b66);
     const auto nn910 = ntk.create_not(n910);
@@ -1250,6 +1384,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n916 = ntk.create_and(nn909, nn910);
     const auto nn916 = ntk.create_not(n916);
     const auto n917 = ntk.create_and(nn911, nn916);
+    const auto na67 = ntk.create_not(a67);
+    const auto nb67 = ntk.create_not(b67);
     const auto n918 = ntk.create_and(na67, nb67);
     const auto n919 = ntk.create_and(a67, b67);
     const auto nn918 = ntk.create_not(n918);
@@ -1265,6 +1401,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n924 = ntk.create_and(nn917, nn918);
     const auto nn924 = ntk.create_not(n924);
     const auto n925 = ntk.create_and(nn919, nn924);
+    const auto na68 = ntk.create_not(a68);
+    const auto nb68 = ntk.create_not(b68);
     const auto n926 = ntk.create_and(na68, nb68);
     const auto n927 = ntk.create_and(a68, b68);
     const auto nn926 = ntk.create_not(n926);
@@ -1280,6 +1418,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n932 = ntk.create_and(nn925, nn926);
     const auto nn932 = ntk.create_not(n932);
     const auto n933 = ntk.create_and(nn927, nn932);
+    const auto na69 = ntk.create_not(a69);
+    const auto nb69 = ntk.create_not(b69);
     const auto n934 = ntk.create_and(na69, nb69);
     const auto n935 = ntk.create_and(a69, b69);
     const auto nn934 = ntk.create_not(n934);
@@ -1295,6 +1435,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n940 = ntk.create_and(nn933, nn934);
     const auto nn940 = ntk.create_not(n940);
     const auto n941 = ntk.create_and(nn935, nn940);
+    const auto na70 = ntk.create_not(a70);
+    const auto nb70 = ntk.create_not(b70);
     const auto n942 = ntk.create_and(na70, nb70);
     const auto n943 = ntk.create_and(a70, b70);
     const auto nn942 = ntk.create_not(n942);
@@ -1310,6 +1452,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n948 = ntk.create_and(nn941, nn942);
     const auto nn948 = ntk.create_not(n948);
     const auto n949 = ntk.create_and(nn943, nn948);
+    const auto na71 = ntk.create_not(a71);
+    const auto nb71 = ntk.create_not(b71);
     const auto n950 = ntk.create_and(na71, nb71);
     const auto n951 = ntk.create_and(a71, b71);
     const auto nn950 = ntk.create_not(n950);
@@ -1325,6 +1469,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n956 = ntk.create_and(nn949, nn950);
     const auto nn956 = ntk.create_not(n956);
     const auto n957 = ntk.create_and(nn951, nn956);
+    const auto na72 = ntk.create_not(a72);
+    const auto nb72 = ntk.create_not(b72);
     const auto n958 = ntk.create_and(na72, nb72);
     const auto n959 = ntk.create_and(a72, b72);
     const auto nn958 = ntk.create_not(n958);
@@ -1340,6 +1486,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n964 = ntk.create_and(nn957, nn958);
     const auto nn964 = ntk.create_not(n964);
     const auto n965 = ntk.create_and(nn959, nn964);
+    const auto na73 = ntk.create_not(a73);
+    const auto nb73 = ntk.create_not(b73);
     const auto n966 = ntk.create_and(na73, nb73);
     const auto n967 = ntk.create_and(a73, b73);
     const auto nn966 = ntk.create_not(n966);
@@ -1355,6 +1503,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n972 = ntk.create_and(nn965, nn966);
     const auto nn972 = ntk.create_not(n972);
     const auto n973 = ntk.create_and(nn967, nn972);
+    const auto na74 = ntk.create_not(a74);
+    const auto nb74 = ntk.create_not(b74);
     const auto n974 = ntk.create_and(na74, nb74);
     const auto n975 = ntk.create_and(a74, b74);
     const auto nn974 = ntk.create_not(n974);
@@ -1370,6 +1520,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n980 = ntk.create_and(nn973, nn974);
     const auto nn980 = ntk.create_not(n980);
     const auto n981 = ntk.create_and(nn975, nn980);
+    const auto na75 = ntk.create_not(a75);
+    const auto nb75 = ntk.create_not(b75);
     const auto n982 = ntk.create_and(na75, nb75);
     const auto n983 = ntk.create_and(a75, b75);
     const auto nn982 = ntk.create_not(n982);
@@ -1385,6 +1537,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n988 = ntk.create_and(nn981, nn982);
     const auto nn988 = ntk.create_not(n988);
     const auto n989 = ntk.create_and(nn983, nn988);
+    const auto na76 = ntk.create_not(a76);
+    const auto nb76 = ntk.create_not(b76);
     const auto n990 = ntk.create_and(na76, nb76);
     const auto n991 = ntk.create_and(a76, b76);
     const auto nn990 = ntk.create_not(n990);
@@ -1400,6 +1554,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n996 = ntk.create_and(nn989, nn990);
     const auto nn996 = ntk.create_not(n996);
     const auto n997 = ntk.create_and(nn991, nn996);
+    const auto na77 = ntk.create_not(a77);
+    const auto nb77 = ntk.create_not(b77);
     const auto n998 = ntk.create_and(na77, nb77);
     const auto n999 = ntk.create_and(a77, b77);
     const auto nn998 = ntk.create_not(n998);
@@ -1415,6 +1571,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1004 = ntk.create_and(nn997, nn998);
     const auto nn1004 = ntk.create_not(n1004);
     const auto n1005 = ntk.create_and(nn999, nn1004);
+    const auto na78 = ntk.create_not(a78);
+    const auto nb78 = ntk.create_not(b78);
     const auto n1006 = ntk.create_and(na78, nb78);
     const auto n1007 = ntk.create_and(a78, b78);
     const auto nn1006 = ntk.create_not(n1006);
@@ -1430,6 +1588,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1012 = ntk.create_and(nn1005, nn1006);
     const auto nn1012 = ntk.create_not(n1012);
     const auto n1013 = ntk.create_and(nn1007, nn1012);
+    const auto na79 = ntk.create_not(a79);
+    const auto nb79 = ntk.create_not(b79);
     const auto n1014 = ntk.create_and(na79, nb79);
     const auto n1015 = ntk.create_and(a79, b79);
     const auto nn1014 = ntk.create_not(n1014);
@@ -1445,6 +1605,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1020 = ntk.create_and(nn1013, nn1014);
     const auto nn1020 = ntk.create_not(n1020);
     const auto n1021 = ntk.create_and(nn1015, nn1020);
+    const auto na80 = ntk.create_not(a80);
+    const auto nb80 = ntk.create_not(b80);
     const auto n1022 = ntk.create_and(na80, nb80);
     const auto n1023 = ntk.create_and(a80, b80);
     const auto nn1022 = ntk.create_not(n1022);
@@ -1460,6 +1622,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1028 = ntk.create_and(nn1021, nn1022);
     const auto nn1028 = ntk.create_not(n1028);
     const auto n1029 = ntk.create_and(nn1023, nn1028);
+    const auto na81 = ntk.create_not(a81);
+    const auto nb81 = ntk.create_not(b81);
     const auto n1030 = ntk.create_and(na81, nb81);
     const auto n1031 = ntk.create_and(a81, b81);
     const auto nn1030 = ntk.create_not(n1030);
@@ -1475,6 +1639,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1036 = ntk.create_and(nn1029, nn1030);
     const auto nn1036 = ntk.create_not(n1036);
     const auto n1037 = ntk.create_and(nn1031, nn1036);
+    const auto na82 = ntk.create_not(a82);
+    const auto nb82 = ntk.create_not(b82);
     const auto n1038 = ntk.create_and(na82, nb82);
     const auto n1039 = ntk.create_and(a82, b82);
     const auto nn1038 = ntk.create_not(n1038);
@@ -1490,6 +1656,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1044 = ntk.create_and(nn1037, nn1038);
     const auto nn1044 = ntk.create_not(n1044);
     const auto n1045 = ntk.create_and(nn1039, nn1044);
+    const auto na83 = ntk.create_not(a83);
+    const auto nb83 = ntk.create_not(b83);
     const auto n1046 = ntk.create_and(na83, nb83);
     const auto n1047 = ntk.create_and(a83, b83);
     const auto nn1046 = ntk.create_not(n1046);
@@ -1505,6 +1673,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1052 = ntk.create_and(nn1045, nn1046);
     const auto nn1052 = ntk.create_not(n1052);
     const auto n1053 = ntk.create_and(nn1047, nn1052);
+    const auto na84 = ntk.create_not(a84);
+    const auto nb84 = ntk.create_not(b84);
     const auto n1054 = ntk.create_and(na84, nb84);
     const auto n1055 = ntk.create_and(a84, b84);
     const auto nn1054 = ntk.create_not(n1054);
@@ -1520,6 +1690,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1060 = ntk.create_and(nn1053, nn1054);
     const auto nn1060 = ntk.create_not(n1060);
     const auto n1061 = ntk.create_and(nn1055, nn1060);
+    const auto na85 = ntk.create_not(a85);
+    const auto nb85 = ntk.create_not(b85);
     const auto n1062 = ntk.create_and(na85, nb85);
     const auto n1063 = ntk.create_and(a85, b85);
     const auto nn1062 = ntk.create_not(n1062);
@@ -1535,6 +1707,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1068 = ntk.create_and(nn1061, nn1062);
     const auto nn1068 = ntk.create_not(n1068);
     const auto n1069 = ntk.create_and(nn1063, nn1068);
+    const auto na86 = ntk.create_not(a86);
+    const auto nb86 = ntk.create_not(b86);
     const auto n1070 = ntk.create_and(na86, nb86);
     const auto n1071 = ntk.create_and(a86, b86);
     const auto nn1070 = ntk.create_not(n1070);
@@ -1550,6 +1724,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1076 = ntk.create_and(nn1069, nn1070);
     const auto nn1076 = ntk.create_not(n1076);
     const auto n1077 = ntk.create_and(nn1071, nn1076);
+    const auto na87 = ntk.create_not(a87);
+    const auto nb87 = ntk.create_not(b87);
     const auto n1078 = ntk.create_and(na87, nb87);
     const auto n1079 = ntk.create_and(a87, b87);
     const auto nn1078 = ntk.create_not(n1078);
@@ -1565,6 +1741,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1084 = ntk.create_and(nn1077, nn1078);
     const auto nn1084 = ntk.create_not(n1084);
     const auto n1085 = ntk.create_and(nn1079, nn1084);
+    const auto na88 = ntk.create_not(a88);
+    const auto nb88 = ntk.create_not(b88);
     const auto n1086 = ntk.create_and(na88, nb88);
     const auto n1087 = ntk.create_and(a88, b88);
     const auto nn1086 = ntk.create_not(n1086);
@@ -1580,6 +1758,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1092 = ntk.create_and(nn1085, nn1086);
     const auto nn1092 = ntk.create_not(n1092);
     const auto n1093 = ntk.create_and(nn1087, nn1092);
+    const auto na89 = ntk.create_not(a89);
+    const auto nb89 = ntk.create_not(b89);
     const auto n1094 = ntk.create_and(na89, nb89);
     const auto n1095 = ntk.create_and(a89, b89);
     const auto nn1094 = ntk.create_not(n1094);
@@ -1595,6 +1775,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1100 = ntk.create_and(nn1093, nn1094);
     const auto nn1100 = ntk.create_not(n1100);
     const auto n1101 = ntk.create_and(nn1095, nn1100);
+    const auto na90 = ntk.create_not(a90);
+    const auto nb90 = ntk.create_not(b90);
     const auto n1102 = ntk.create_and(na90, nb90);
     const auto n1103 = ntk.create_and(a90, b90);
     const auto nn1102 = ntk.create_not(n1102);
@@ -1610,6 +1792,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1108 = ntk.create_and(nn1101, nn1102);
     const auto nn1108 = ntk.create_not(n1108);
     const auto n1109 = ntk.create_and(nn1103, nn1108);
+    const auto na91 = ntk.create_not(a91);
+    const auto nb91 = ntk.create_not(b91);
     const auto n1110 = ntk.create_and(na91, nb91);
     const auto n1111 = ntk.create_and(a91, b91);
     const auto nn1110 = ntk.create_not(n1110);
@@ -1625,6 +1809,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1116 = ntk.create_and(nn1109, nn1110);
     const auto nn1116 = ntk.create_not(n1116);
     const auto n1117 = ntk.create_and(nn1111, nn1116);
+    const auto na92 = ntk.create_not(a92);
+    const auto nb92 = ntk.create_not(b92);
     const auto n1118 = ntk.create_and(na92, nb92);
     const auto n1119 = ntk.create_and(a92, b92);
     const auto nn1118 = ntk.create_not(n1118);
@@ -1640,6 +1826,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1124 = ntk.create_and(nn1117, nn1118);
     const auto nn1124 = ntk.create_not(n1124);
     const auto n1125 = ntk.create_and(nn1119, nn1124);
+    const auto na93 = ntk.create_not(a93);
+    const auto nb93 = ntk.create_not(b93);
     const auto n1126 = ntk.create_and(na93, nb93);
     const auto n1127 = ntk.create_and(a93, b93);
     const auto nn1126 = ntk.create_not(n1126);
@@ -1655,6 +1843,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1132 = ntk.create_and(nn1125, nn1126);
     const auto nn1132 = ntk.create_not(n1132);
     const auto n1133 = ntk.create_and(nn1127, nn1132);
+    const auto na94 = ntk.create_not(a94);
+    const auto nb94 = ntk.create_not(b94);
     const auto n1134 = ntk.create_and(na94, nb94);
     const auto n1135 = ntk.create_and(a94, b94);
     const auto nn1134 = ntk.create_not(n1134);
@@ -1670,6 +1860,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1140 = ntk.create_and(nn1133, nn1134);
     const auto nn1140 = ntk.create_not(n1140);
     const auto n1141 = ntk.create_and(nn1135, nn1140);
+    const auto na95 = ntk.create_not(a95);
+    const auto nb95 = ntk.create_not(b95);
     const auto n1142 = ntk.create_and(na95, nb95);
     const auto n1143 = ntk.create_and(a95, b95);
     const auto nn1142 = ntk.create_not(n1142);
@@ -1685,6 +1877,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1148 = ntk.create_and(nn1141, nn1142);
     const auto nn1148 = ntk.create_not(n1148);
     const auto n1149 = ntk.create_and(nn1143, nn1148);
+    const auto na96 = ntk.create_not(a96);
+    const auto nb96 = ntk.create_not(b96);
     const auto n1150 = ntk.create_and(na96, nb96);
     const auto n1151 = ntk.create_and(a96, b96);
     const auto nn1150 = ntk.create_not(n1150);
@@ -1700,6 +1894,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1156 = ntk.create_and(nn1149, nn1150);
     const auto nn1156 = ntk.create_not(n1156);
     const auto n1157 = ntk.create_and(nn1151, nn1156);
+    const auto na97 = ntk.create_not(a97);
+    const auto nb97 = ntk.create_not(b97);
     const auto n1158 = ntk.create_and(na97, nb97);
     const auto n1159 = ntk.create_and(a97, b97);
     const auto nn1158 = ntk.create_not(n1158);
@@ -1715,6 +1911,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1164 = ntk.create_and(nn1157, nn1158);
     const auto nn1164 = ntk.create_not(n1164);
     const auto n1165 = ntk.create_and(nn1159, nn1164);
+    const auto na98 = ntk.create_not(a98);
+    const auto nb98 = ntk.create_not(b98);
     const auto n1166 = ntk.create_and(na98, nb98);
     const auto n1167 = ntk.create_and(a98, b98);
     const auto nn1166 = ntk.create_not(n1166);
@@ -1730,6 +1928,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1172 = ntk.create_and(nn1165, nn1166);
     const auto nn1172 = ntk.create_not(n1172);
     const auto n1173 = ntk.create_and(nn1167, nn1172);
+    const auto na99 = ntk.create_not(a99);
+    const auto nb99 = ntk.create_not(b99);
     const auto n1174 = ntk.create_and(na99, nb99);
     const auto n1175 = ntk.create_and(a99, b99);
     const auto nn1174 = ntk.create_not(n1174);
@@ -1745,6 +1945,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1180 = ntk.create_and(nn1173, nn1174);
     const auto nn1180 = ntk.create_not(n1180);
     const auto n1181 = ntk.create_and(nn1175, nn1180);
+    const auto na100 = ntk.create_not(a100);
+    const auto nb100 = ntk.create_not(b100);
     const auto n1182 = ntk.create_and(na100, nb100);
     const auto n1183 = ntk.create_and(a100, b100);
     const auto nn1182 = ntk.create_not(n1182);
@@ -1760,6 +1962,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1188 = ntk.create_and(nn1181, nn1182);
     const auto nn1188 = ntk.create_not(n1188);
     const auto n1189 = ntk.create_and(nn1183, nn1188);
+    const auto na101 = ntk.create_not(a101);
+    const auto nb101 = ntk.create_not(b101);
     const auto n1190 = ntk.create_and(na101, nb101);
     const auto n1191 = ntk.create_and(a101, b101);
     const auto nn1190 = ntk.create_not(n1190);
@@ -1775,6 +1979,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1196 = ntk.create_and(nn1189, nn1190);
     const auto nn1196 = ntk.create_not(n1196);
     const auto n1197 = ntk.create_and(nn1191, nn1196);
+    const auto na102 = ntk.create_not(a102);
+    const auto nb102 = ntk.create_not(b102);
     const auto n1198 = ntk.create_and(na102, nb102);
     const auto n1199 = ntk.create_and(a102, b102);
     const auto nn1198 = ntk.create_not(n1198);
@@ -1790,6 +1996,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1204 = ntk.create_and(nn1197, nn1198);
     const auto nn1204 = ntk.create_not(n1204);
     const auto n1205 = ntk.create_and(nn1199, nn1204);
+    const auto na103 = ntk.create_not(a103);
+    const auto nb103 = ntk.create_not(b103);
     const auto n1206 = ntk.create_and(na103, nb103);
     const auto n1207 = ntk.create_and(a103, b103);
     const auto nn1206 = ntk.create_not(n1206);
@@ -1805,6 +2013,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1212 = ntk.create_and(nn1205, nn1206);
     const auto nn1212 = ntk.create_not(n1212);
     const auto n1213 = ntk.create_and(nn1207, nn1212);
+    const auto na104 = ntk.create_not(a104);
+    const auto nb104 = ntk.create_not(b104);
     const auto n1214 = ntk.create_and(na104, nb104);
     const auto n1215 = ntk.create_and(a104, b104);
     const auto nn1214 = ntk.create_not(n1214);
@@ -1820,6 +2030,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1220 = ntk.create_and(nn1213, nn1214);
     const auto nn1220 = ntk.create_not(n1220);
     const auto n1221 = ntk.create_and(nn1215, nn1220);
+    const auto na105 = ntk.create_not(a105);
+    const auto nb105 = ntk.create_not(b105);
     const auto n1222 = ntk.create_and(na105, nb105);
     const auto n1223 = ntk.create_and(a105, b105);
     const auto nn1222 = ntk.create_not(n1222);
@@ -1835,6 +2047,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1228 = ntk.create_and(nn1221, nn1222);
     const auto nn1228 = ntk.create_not(n1228);
     const auto n1229 = ntk.create_and(nn1223, nn1228);
+    const auto na106 = ntk.create_not(a106);
+    const auto nb106 = ntk.create_not(b106);
     const auto n1230 = ntk.create_and(na106, nb106);
     const auto n1231 = ntk.create_and(a106, b106);
     const auto nn1230 = ntk.create_not(n1230);
@@ -1850,6 +2064,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1236 = ntk.create_and(nn1229, nn1230);
     const auto nn1236 = ntk.create_not(n1236);
     const auto n1237 = ntk.create_and(nn1231, nn1236);
+    const auto na107 = ntk.create_not(a107);
+    const auto nb107 = ntk.create_not(b107);
     const auto n1238 = ntk.create_and(na107, nb107);
     const auto n1239 = ntk.create_and(a107, b107);
     const auto nn1238 = ntk.create_not(n1238);
@@ -1865,6 +2081,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1244 = ntk.create_and(nn1237, nn1238);
     const auto nn1244 = ntk.create_not(n1244);
     const auto n1245 = ntk.create_and(nn1239, nn1244);
+    const auto na108 = ntk.create_not(a108);
+    const auto nb108 = ntk.create_not(b108);
     const auto n1246 = ntk.create_and(na108, nb108);
     const auto n1247 = ntk.create_and(a108, b108);
     const auto nn1246 = ntk.create_not(n1246);
@@ -1880,6 +2098,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1252 = ntk.create_and(nn1245, nn1246);
     const auto nn1252 = ntk.create_not(n1252);
     const auto n1253 = ntk.create_and(nn1247, nn1252);
+    const auto na109 = ntk.create_not(a109);
+    const auto nb109 = ntk.create_not(b109);
     const auto n1254 = ntk.create_and(na109, nb109);
     const auto n1255 = ntk.create_and(a109, b109);
     const auto nn1254 = ntk.create_not(n1254);
@@ -1895,6 +2115,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1260 = ntk.create_and(nn1253, nn1254);
     const auto nn1260 = ntk.create_not(n1260);
     const auto n1261 = ntk.create_and(nn1255, nn1260);
+    const auto na110 = ntk.create_not(a110);
+    const auto nb110 = ntk.create_not(b110);
     const auto n1262 = ntk.create_and(na110, nb110);
     const auto n1263 = ntk.create_and(a110, b110);
     const auto nn1262 = ntk.create_not(n1262);
@@ -1910,6 +2132,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1268 = ntk.create_and(nn1261, nn1262);
     const auto nn1268 = ntk.create_not(n1268);
     const auto n1269 = ntk.create_and(nn1263, nn1268);
+    const auto na111 = ntk.create_not(a111);
+    const auto nb111 = ntk.create_not(b111);
     const auto n1270 = ntk.create_and(na111, nb111);
     const auto n1271 = ntk.create_and(a111, b111);
     const auto nn1270 = ntk.create_not(n1270);
@@ -1925,6 +2149,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1276 = ntk.create_and(nn1269, nn1270);
     const auto nn1276 = ntk.create_not(n1276);
     const auto n1277 = ntk.create_and(nn1271, nn1276);
+    const auto na112 = ntk.create_not(a112);
+    const auto nb112 = ntk.create_not(b112);
     const auto n1278 = ntk.create_and(na112, nb112);
     const auto n1279 = ntk.create_and(a112, b112);
     const auto nn1278 = ntk.create_not(n1278);
@@ -1940,6 +2166,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1284 = ntk.create_and(nn1277, nn1278);
     const auto nn1284 = ntk.create_not(n1284);
     const auto n1285 = ntk.create_and(nn1279, nn1284);
+    const auto na113 = ntk.create_not(a113);
+    const auto nb113 = ntk.create_not(b113);
     const auto n1286 = ntk.create_and(na113, nb113);
     const auto n1287 = ntk.create_and(a113, b113);
     const auto nn1286 = ntk.create_not(n1286);
@@ -1955,6 +2183,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1292 = ntk.create_and(nn1285, nn1286);
     const auto nn1292 = ntk.create_not(n1292);
     const auto n1293 = ntk.create_and(nn1287, nn1292);
+    const auto na114 = ntk.create_not(a114);
+    const auto nb114 = ntk.create_not(b114);
     const auto n1294 = ntk.create_and(na114, nb114);
     const auto n1295 = ntk.create_and(a114, b114);
     const auto nn1294 = ntk.create_not(n1294);
@@ -1970,6 +2200,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1300 = ntk.create_and(nn1293, nn1294);
     const auto nn1300 = ntk.create_not(n1300);
     const auto n1301 = ntk.create_and(nn1295, nn1300);
+    const auto na115 = ntk.create_not(a115);
+    const auto nb115 = ntk.create_not(b115);
     const auto n1302 = ntk.create_and(na115, nb115);
     const auto n1303 = ntk.create_and(a115, b115);
     const auto nn1302 = ntk.create_not(n1302);
@@ -1985,6 +2217,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1308 = ntk.create_and(nn1301, nn1302);
     const auto nn1308 = ntk.create_not(n1308);
     const auto n1309 = ntk.create_and(nn1303, nn1308);
+    const auto na116 = ntk.create_not(a116);
+    const auto nb116 = ntk.create_not(b116);
     const auto n1310 = ntk.create_and(na116, nb116);
     const auto n1311 = ntk.create_and(a116, b116);
     const auto nn1310 = ntk.create_not(n1310);
@@ -2000,6 +2234,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1316 = ntk.create_and(nn1309, nn1310);
     const auto nn1316 = ntk.create_not(n1316);
     const auto n1317 = ntk.create_and(nn1311, nn1316);
+    const auto na117 = ntk.create_not(a117);
+    const auto nb117 = ntk.create_not(b117);
     const auto n1318 = ntk.create_and(na117, nb117);
     const auto n1319 = ntk.create_and(a117, b117);
     const auto nn1318 = ntk.create_not(n1318);
@@ -2015,6 +2251,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1324 = ntk.create_and(nn1317, nn1318);
     const auto nn1324 = ntk.create_not(n1324);
     const auto n1325 = ntk.create_and(nn1319, nn1324);
+    const auto na118 = ntk.create_not(a118);
+    const auto nb118 = ntk.create_not(b118);
     const auto n1326 = ntk.create_and(na118, nb118);
     const auto n1327 = ntk.create_and(a118, b118);
     const auto nn1326 = ntk.create_not(n1326);
@@ -2030,6 +2268,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1332 = ntk.create_and(nn1325, nn1326);
     const auto nn1332 = ntk.create_not(n1332);
     const auto n1333 = ntk.create_and(nn1327, nn1332);
+    const auto na119 = ntk.create_not(a119);
+    const auto nb119 = ntk.create_not(b119);
     const auto n1334 = ntk.create_and(na119, nb119);
     const auto n1335 = ntk.create_and(a119, b119);
     const auto nn1334 = ntk.create_not(n1334);
@@ -2045,6 +2285,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1340 = ntk.create_and(nn1333, nn1334);
     const auto nn1340 = ntk.create_not(n1340);
     const auto n1341 = ntk.create_and(nn1335, nn1340);
+    const auto na120 = ntk.create_not(a120);
+    const auto nb120 = ntk.create_not(b120);
     const auto n1342 = ntk.create_and(na120, nb120);
     const auto n1343 = ntk.create_and(a120, b120);
     const auto nn1342 = ntk.create_not(n1342);
@@ -2060,6 +2302,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1348 = ntk.create_and(nn1341, nn1342);
     const auto nn1348 = ntk.create_not(n1348);
     const auto n1349 = ntk.create_and(nn1343, nn1348);
+    const auto na121 = ntk.create_not(a121);
+    const auto nb121 = ntk.create_not(b121);
     const auto n1350 = ntk.create_and(na121, nb121);
     const auto n1351 = ntk.create_and(a121, b121);
     const auto nn1350 = ntk.create_not(n1350);
@@ -2075,6 +2319,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1356 = ntk.create_and(nn1349, nn1350);
     const auto nn1356 = ntk.create_not(n1356);
     const auto n1357 = ntk.create_and(nn1351, nn1356);
+    const auto na122 = ntk.create_not(a122);
+    const auto nb122 = ntk.create_not(b122);
     const auto n1358 = ntk.create_and(na122, nb122);
     const auto n1359 = ntk.create_and(a122, b122);
     const auto nn1358 = ntk.create_not(n1358);
@@ -2090,6 +2336,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1364 = ntk.create_and(nn1357, nn1358);
     const auto nn1364 = ntk.create_not(n1364);
     const auto n1365 = ntk.create_and(nn1359, nn1364);
+    const auto na123 = ntk.create_not(a123);
+    const auto nb123 = ntk.create_not(b123);
     const auto n1366 = ntk.create_and(na123, nb123);
     const auto n1367 = ntk.create_and(a123, b123);
     const auto nn1366 = ntk.create_not(n1366);
@@ -2105,6 +2353,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1372 = ntk.create_and(nn1365, nn1366);
     const auto nn1372 = ntk.create_not(n1372);
     const auto n1373 = ntk.create_and(nn1367, nn1372);
+    const auto na124 = ntk.create_not(a124);
+    const auto nb124 = ntk.create_not(b124);
     const auto n1374 = ntk.create_and(na124, nb124);
     const auto n1375 = ntk.create_and(a124, b124);
     const auto nn1374 = ntk.create_not(n1374);
@@ -2120,6 +2370,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1380 = ntk.create_and(nn1373, nn1374);
     const auto nn1380 = ntk.create_not(n1380);
     const auto n1381 = ntk.create_and(nn1375, nn1380);
+    const auto na125 = ntk.create_not(a125);
+    const auto nb125 = ntk.create_not(b125);
     const auto n1382 = ntk.create_and(na125, nb125);
     const auto n1383 = ntk.create_and(a125, b125);
     const auto nn1382 = ntk.create_not(n1382);
@@ -2135,6 +2387,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1388 = ntk.create_and(nn1381, nn1382);
     const auto nn1388 = ntk.create_not(n1388);
     const auto n1389 = ntk.create_and(nn1383, nn1388);
+    const auto na126 = ntk.create_not(a126);
+    const auto nb126 = ntk.create_not(b126);
     const auto n1390 = ntk.create_and(na126, nb126);
     const auto n1391 = ntk.create_and(a126, b126);
     const auto nn1390 = ntk.create_not(n1390);
@@ -2150,6 +2404,8 @@ mockturtle::names_view<Ntk> adder()
     const auto n1396 = ntk.create_and(nn1389, nn1390);
     const auto nn1396 = ntk.create_not(n1396);
     const auto n1397 = ntk.create_and(nn1391, nn1396);
+    const auto na127 = ntk.create_not(a127);
+    const auto nb127 = ntk.create_not(b127);
     const auto n1398 = ntk.create_and(na127, nb127);
     const auto n1399 = ntk.create_and(a127, b127);
     const auto nn1398 = ntk.create_not(n1398);

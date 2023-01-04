@@ -16,9 +16,9 @@ mockturtle::names_view<Ntk> par_check()
     const auto w7 = ntk.create_not(a);
     const auto w8 = ntk.create_and(w7, p);
     const auto n2 = ntk.create_or(w6, w8);
-    const auto w9 = ntk.create_not(n);
+    const auto w9 = ntk.create_not(n2);
     const auto w10 = ntk.create_and(n1, w9);
-    const auto w11 = ntk.create_not(n);
+    const auto w11 = ntk.create_not(n1);
     const auto w12 = ntk.create_and(w11, n2);
     const auto parity_check = ntk.create_or(w10, w12);
 
