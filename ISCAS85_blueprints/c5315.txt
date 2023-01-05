@@ -3222,22 +3222,14 @@ mockturtle::names_view<Ntk> ISCAS85_c5315()
     ntk.create_po(x8124, "x8124");
     ntk.create_po(x8127, "x8127");
     ntk.create_po(x8128, "x8128");
-    ntk.create_po(x141, "x709");
-    ntk.create_po(x293, "x816");
-    ntk.create_po(x592, "x1066");
     ntk.create_po(x1137, "x1142");
     ntk.create_po(x1137, "x1143");
-    ntk.create_po(x137, "x2139");
-    ntk.create_po(x141, "x2142");
     ntk.create_po(x1, "x2309");
-    ntk.create_po(x549, "x2387");
-    ntk.create_po(x299, "x2527");
     ntk.create_po(x1141, "x2584");
     ntk.create_po(x1, "x3357");
     ntk.create_po(x1, "x3358");
     ntk.create_po(x1, "x3359");
     ntk.create_po(x1, "x3360");
-    ntk.create_po(x299, "x3604");
     ntk.create_po(x4275, "x4278");
 
     return ntk;

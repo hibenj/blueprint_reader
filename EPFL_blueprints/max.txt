@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> max()
+mockturtle::names_view<Ntk> EPFL_max()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto in00 = ntk.create_pi("in00");

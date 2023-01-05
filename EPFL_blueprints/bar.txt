@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> bar()
+mockturtle::names_view<Ntk> EPFL_bar()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto a0 = ntk.create_pi("a0");

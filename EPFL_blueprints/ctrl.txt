@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> ctrl()
+mockturtle::names_view<Ntk> EPFL_ctrl()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto opcode0 = ntk.create_pi("opcode0");
@@ -77,7 +77,7 @@ mockturtle::names_view<Ntk> ctrl()
     const auto nn68 = ntk.create_not(n68);
     const auto n69 = ntk.create_and(nopcode2, nn68);
     const auto nn69 = ntk.create_not(n69);
-    const auto sel_alu_opB0 = ntk.create_and(nopcode2, nn69);
+    const auto sel_alu_opb0 = ntk.create_and(nopcode2, nn69);
     const auto n71 = ntk.create_and(nopcode0, nopcode3);
     const auto n72 = ntk.create_and(nn57, n71);
     const auto n73 = ntk.create_and(opcode0, nn45);
@@ -93,7 +93,7 @@ mockturtle::names_view<Ntk> ctrl()
     const auto n78 = ntk.create_and(opcode2, nn53);
     const auto nn77 = ntk.create_not(n77);
     const auto nn78 = ntk.create_not(n78);
-    const auto sel_alu_opB1 = ntk.create_and(nn77, nn78);
+    const auto sel_alu_opb1 = ntk.create_and(nn77, nn78);
     const auto n80 = ntk.create_and(nopcode0, opcode3);
     const auto n81 = ntk.create_and(opcode4, op_ext0);
     const auto n82 = ntk.create_and(n80, n81);
@@ -221,10 +221,10 @@ mockturtle::names_view<Ntk> ctrl()
     const auto nn153 = ntk.create_not(n153);
     const auto n154 = ntk.create_and(opcode2, nn153);
     const auto nn154 = ntk.create_not(n154);
-    const auto sel_pc_opA = ntk.create_and(opcode2, nn154);
+    const auto sel_pc_opa = ntk.create_and(opcode2, nn154);
     const auto n156 = ntk.create_and(opcode2, nn140);
     const auto nn156 = ntk.create_not(n156);
-    const auto sel_pc_opB = ntk.create_and(opcode2, nn156);
+    const auto sel_pc_opb = ntk.create_and(opcode2, nn156);
     const auto n158 = ntk.create_and(nopcode0, nn64);
     const auto nn158 = ntk.create_not(n158);
     const auto n159 = ntk.create_and(nopcode0, nn158);
@@ -276,7 +276,7 @@ mockturtle::names_view<Ntk> ctrl()
     const auto n186 = ntk.create_and(opcode2, nn185);
     const auto nn183 = ntk.create_not(n183);
     const auto nn186 = ntk.create_not(n186);
-    const auto Cin = ntk.create_and(nn183, nn186);
+    const auto cin = ntk.create_and(nn183, nn186);
     const auto n188 = ntk.create_and(op_ext0, n36);
     const auto nn188 = ntk.create_not(n188);
     const auto n189 = ntk.create_and(nop_ext1, nn188);
@@ -293,12 +293,12 @@ mockturtle::names_view<Ntk> ctrl()
     const auto nn194 = ntk.create_not(n194);
     const auto n195 = ntk.create_and(nopcode2, nn194);
     const auto nn195 = ntk.create_not(n195);
-    const auto invA = ntk.create_and(nopcode2, nn195);
+    const auto inva = ntk.create_and(nopcode2, nn195);
     const auto n197 = ntk.create_and(nn90, n179);
     const auto nn197 = ntk.create_not(n197);
     const auto n198 = ntk.create_and(nopcode2, nn197);
     const auto nn198 = ntk.create_not(n198);
-    const auto invB = ntk.create_and(nn186, nn198);
+    const auto invb = ntk.create_and(nn186, nn198);
     const auto n200 = ntk.create_and(nopcode1, nn124);
     const auto n201 = ntk.create_and(opcode1, nn96);
     const auto nn200 = ntk.create_not(n200);
@@ -318,8 +318,8 @@ mockturtle::names_view<Ntk> ctrl()
 
     ntk.create_po(sel_reg_dst0, "sel_reg_dst0");
     ntk.create_po(sel_reg_dst1, "sel_reg_dst1");
-    ntk.create_po(sel_alu_opB0, "sel_alu_opB0");
-    ntk.create_po(sel_alu_opB1, "sel_alu_opB1");
+    ntk.create_po(sel_alu_opb0, "sel_alu_opb0");
+    ntk.create_po(sel_alu_opb1, "sel_alu_opb1");
     ntk.create_po(alu_op0, "alu_op0");
     ntk.create_po(alu_op1, "alu_op1");
     ntk.create_po(alu_op2, "alu_op2");
@@ -329,16 +329,16 @@ mockturtle::names_view<Ntk> ctrl()
     ntk.create_po(alu_op_ext3, "alu_op_ext3");
     ntk.create_po(halt, "halt");
     ntk.create_po(reg_write, "reg_write");
-    ntk.create_po(sel_pc_opA, "sel_pc_opA");
-    ntk.create_po(sel_pc_opB, "sel_pc_opB");
+    ntk.create_po(sel_pc_opa, "sel_pc_opa");
+    ntk.create_po(sel_pc_opb, "sel_pc_opb");
     ntk.create_po(beqz, "beqz");
     ntk.create_po(bnez, "bnez");
     ntk.create_po(bgez, "bgez");
     ntk.create_po(bltz, "bltz");
     ntk.create_po(jump, "jump");
-    ntk.create_po(Cin, "Cin");
-    ntk.create_po(invA, "invA");
-    ntk.create_po(invB, "invB");
+    ntk.create_po(cin, "cin");
+    ntk.create_po(inva, "inva");
+    ntk.create_po(invb, "invb");
     ntk.create_po(mem_write, "mem_write");
     ntk.create_po(sel_wb, "sel_wb");
 

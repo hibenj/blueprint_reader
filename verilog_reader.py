@@ -2,8 +2,8 @@ import re
 
 network_name = []
 
-file_name = "c7552"
-folder_name = "ISCAS85"
+file_name = "max"
+folder_name = "EPFL"
 
 with open('{}/{}.v'.format(folder_name, file_name), 'r') as reader:
     line = reader.readline()
@@ -34,6 +34,8 @@ with open('{}_blueprints/{}.txt'.format(folder_name, file_name), 'w') as writer:
     placed_gates_storage = []
     required_gates_storage = []
     place_this_gate = []
+    inv_output_storage = []
+    inputs = []
 
     one_line = ""
     last_sign_flag = False
@@ -162,6 +164,7 @@ with open('{}_blueprints/{}.txt'.format(folder_name, file_name), 'w') as writer:
                     pass
                 
                 elif(res[0] == "input"):
+                    inputs = res
                     if(place_0_const == True):
                         writer.write("    const auto const0 = ntk.create_pi(\"const0\");\n")
                         place_0_const = False
@@ -177,6 +180,7 @@ with open('{}_blueprints/{}.txt'.format(folder_name, file_name), 'w') as writer:
                                 input =  "x" + input
                             writer.write("    const auto {} = ntk.create_pi(\"{}\");\n".format(input, input))
                             placed_gates_storage.append(input)
+                            
                 
                 elif(res[0] == "output"):
                     for output in res:
@@ -218,14 +222,24 @@ with open('{}_blueprints/{}.txt'.format(folder_name, file_name), 'w') as writer:
                             string = res[1] + ","
                             if string in o:
                                 output_storage.remove(o)
-                        print(res)
                         if (res[3] =="x1'b0"):
-                            output_storage.append("    ntk.create_po(const0, \"{}\");\n".format(res[1]))
+                            inv_output_storage.append("    const auto nconst0 = ntk.create_not(const0);\n")
+                            inv_output_storage.append("    const auto nnconst0 = ntk.create_not(nconst0);\n")
+                            output_storage.append("    ntk.create_po(nnconst0, \"{}\");\n".format(res[1]))
+                            print(res)
                         elif (res[3] =="x1'b1"):
-                            output_storage.append("    ntk.create_po(const1, \"{}\");\n".format(res[1]))
+                            inv_output_storage.append("    const auto nconst1 = ntk.create_not(const1);\n")
+                            inv_output_storage.append("    const auto nnconst1 = ntk.create_not(nconst1);\n")
+                            output_storage.append("    ntk.create_po(nnconst1, \"{}\");\n".format(res[1]))
+                            print(res)
                         else:
-                            output_storage.append("    ntk.create_po({}, \"{}\");\n".format(res[3], res[1]))
-                        
+                            if res[3][1:] in inputs:
+                                print(res)
+                                inv_output_storage.append("    const auto n{} = ntk.create_not({});\n".format(res[1], res[3]))
+                                inv_output_storage.append("    const auto nn{} = ntk.create_not(n{});\n".format(res[1], res[1]))
+                                output_storage.append("    ntk.create_po(nn{}, \"{}\");\n".format(res[1], res[1]))
+                            else:
+                                output_storage.append("    ntk.create_po({}, \"{}\");\n".format(res[3], res[1]))
                         
                 elif(len(res)<4):
                     print(res)   
@@ -282,6 +296,9 @@ with open('{}_blueprints/{}.txt'.format(folder_name, file_name), 'w') as writer:
                 process_flag = False
 
     writer.write("\n")
+
+    for inv_po in inv_output_storage:
+        writer.write(inv_po)
 
     for po in output_storage:
         writer.write(po)

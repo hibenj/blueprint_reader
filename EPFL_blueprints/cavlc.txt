@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> cavlc()
+mockturtle::names_view<Ntk> EPFL_cavlc()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto totalcoeffs0 = ntk.create_pi("totalcoeffs0");

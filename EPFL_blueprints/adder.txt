@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> adder()
+mockturtle::names_view<Ntk> EPFL_adder()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto a0 = ntk.create_pi("a0");
@@ -2419,7 +2419,7 @@ mockturtle::names_view<Ntk> adder()
     const auto nn1402 = ntk.create_not(n1402);
     const auto f127 = ntk.create_and(nn1401, nn1402);
     const auto n1404 = ntk.create_and(nn1397, nn1398);
-    const auto cOut = ntk.create_or(n1399, n1404);
+    const auto cout = ntk.create_or(n1399, n1404);
 
     ntk.create_po(f0, "f0");
     ntk.create_po(f1, "f1");
@@ -2549,7 +2549,7 @@ mockturtle::names_view<Ntk> adder()
     ntk.create_po(f125, "f125");
     ntk.create_po(f126, "f126");
     ntk.create_po(f127, "f127");
-    ntk.create_po(cOut, "cOut");
+    ntk.create_po(cout, "cout");
 
     return ntk;
 }

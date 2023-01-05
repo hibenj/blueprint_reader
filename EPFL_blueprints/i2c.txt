@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> i2c()
+mockturtle::names_view<Ntk> EPFL_i2c()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto pi000 = ntk.create_pi("pi000");

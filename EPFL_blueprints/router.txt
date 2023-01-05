@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> router()
+mockturtle::names_view<Ntk> EPFL_router()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto dest_x0 = ntk.create_pi("dest_x0");

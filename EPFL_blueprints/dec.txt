@@ -1,5 +1,5 @@
 template <typename Ntk>
-mockturtle::names_view<Ntk> dec()
+mockturtle::names_view<Ntk> EPFL_dec()
 {
     mockturtle::names_view<Ntk> ntk{};
     const auto count0 = ntk.create_pi("count0");
