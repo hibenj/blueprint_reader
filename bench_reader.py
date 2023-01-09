@@ -2,10 +2,12 @@ import re
 
 network_name = []
 
-benchmark_name = ["b18"] # "b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08", "b09", "b10", 
-                    # "b11", "b12", "b13", "b14", "b15", "b17", , "b19", "b20", "b21", "b22"
+benchmark_name = ["b15"]
+                    # , , "b17", "b18" , "b19", "b20", "b21", "b22", "b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08", "b09", "b10", "b11", "b12", "b13", "b14"
 
 benchmark_type = [""] # , "_opt", "_opt_r"
+
+folder_name = "i99t"
 
 for b_n in benchmark_name:
     for b_t in benchmark_type:
@@ -31,7 +33,7 @@ for b_n in benchmark_name:
             # writer.writelines(reversed(dog_breeds))
             
             writer.write("template <typename Ntk>\n")
-            writer.write("mockturtle::names_view<Ntk> {}()\n".format(network_name[2]))
+            writer.write("mockturtle::names_view<Ntk> {}_{}()\n".format(folder_name, network_name[2]))
             writer.write("{\n")
             writer.write("    mockturtle::names_view<Ntk> ntk{};\n")
 
@@ -47,10 +49,16 @@ for b_n in benchmark_name:
 
             for new_line in full_text:
                 if not(new_line[0] == "#"):
+                    new_line = new_line.lower()
                     new_line = new_line.replace(' ', '')
                     res = re.split('=|\)|\(|,', new_line)
+                    r_it = 0
+                    for r in res:
+                        if r[-1] == "_":
+                            res[r_it] = res[r_it][:-1]
+                        r_it += 1
 
-                    if("INPUT" in new_line):
+                    if("input" in new_line):
                         # writer.write(new_line)
                         
                         #split the string to get the name of the INPUT
@@ -63,12 +71,12 @@ for b_n in benchmark_name:
                         placed_gates_storage.append(res[1])
 
                         writer.write("\n")
-                    elif("OUTPUT" in new_line):
+                    elif("output" in new_line):
 
                         #write the corresponding blueprint line
                         # e.g. ntk.create_po(m, "f");
                         # e.g. const auto bridge_out_neg_1 = ntk.create_not(OUTP_REG);
-                        if("REG" in res[1]):
+                        if("reg" in res[1]):
                             Bridge_Appendix = []
                             Bridge_Appendix.append("    const auto bridge_out_neg_{} = ntk.create_not({});\n".format(bridge_counter, res[1]))
                             Bridge_Appendix.append("    const auto bridge_out_{} = ntk.create_not(bridge_out_neg_{});\n".format(bridge_counter, bridge_counter))
@@ -79,7 +87,7 @@ for b_n in benchmark_name:
                         else:
                             output_storage.append("    ntk.create_po({}, \"{}\");\n".format(res[1], res[1]))
 
-                    elif("REG" in res[0]):
+                    elif("reg" in res[0]):
 
                         #write the corresponding blueprint line for RO
                         # e.g. const auto r1_o = ntk.create_ro();
@@ -93,7 +101,7 @@ for b_n in benchmark_name:
                         register_storage.append(ri_creator)
 
                     elif(len(res) == 4):
-                        if("NOT" in res[1]):
+                        if("not" in res[1]):
                             #res[2] is input
 
                             #write the corresponding blueprint line for RO
@@ -108,7 +116,7 @@ for b_n in benchmark_name:
                             place_this_gate.append(res[0])
                     
                     elif(len(res) == 5):
-                        if("NAND" in res[1]):
+                        if("nand" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -119,13 +127,13 @@ for b_n in benchmark_name:
 
                             gate_string_storage.append(Appendix)
 
-                        elif("AND" in res[1]):
+                        elif("and" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {} = ntk.create_and({}, {});\n".format(res[0], res[2], res[3]))
 
                             gate_string_storage.append(Appendix)
                         
-                        elif("NOR" in res[1]):
+                        elif("nor" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -136,7 +144,7 @@ for b_n in benchmark_name:
 
                             gate_string_storage.append(Appendix)
 
-                        elif("OR" in res[1]):
+                        elif("or" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {} = ntk.create_or({}, {});\n".format(res[0], res[2], res[3]))
 
@@ -147,7 +155,7 @@ for b_n in benchmark_name:
                         place_this_gate.append(res[0])
 
                     elif(len(res) == 6):
-                        if("NAND" in res[1]):
+                        if("nand" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -159,14 +167,14 @@ for b_n in benchmark_name:
 
                             gate_string_storage.append(Appendix)
 
-                        elif("AND" in res[1]):
+                        elif("and" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {}_h1 = ntk.create_and({}, {});\n".format(res[0], res[2], res[3]))
                             Appendix.append("    const auto {} = ntk.create_and({}_h1, {});\n".format(res[0], res[0], res[4]))
 
                             gate_string_storage.append(Appendix)
                         
-                        elif("NOR" in res[1]):
+                        elif("nor" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -178,7 +186,7 @@ for b_n in benchmark_name:
 
                             gate_string_storage.append(Appendix)
 
-                        elif("OR" in res[1]):
+                        elif("or" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {}_h1 = ntk.create_or({}, {});\n".format(res[0], res[2], res[3]))
                             Appendix.append("    const auto {} = ntk.create_or({}_h1, {});\n".format(res[0], res[0], res[4]))
@@ -190,7 +198,7 @@ for b_n in benchmark_name:
                         place_this_gate.append(res[0])
 
                     elif(len(res) == 7):
-                        if("NAND" in res[1]):
+                        if("nand" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -203,7 +211,7 @@ for b_n in benchmark_name:
 
                             gate_string_storage.append(Appendix)
 
-                        elif("AND" in res[1]):
+                        elif("and" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {}_h1 = ntk.create_and({}, {});\n".format(res[0], res[2], res[3]))
                             Appendix.append("    const auto {}_h2 = ntk.create_and({}, {});\n".format(res[0], res[4], res[5]))
@@ -211,7 +219,7 @@ for b_n in benchmark_name:
 
                             gate_string_storage.append(Appendix)
                         
-                        elif("NOR" in res[1]):
+                        elif("nor" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -223,7 +231,7 @@ for b_n in benchmark_name:
                             Appendix.append("    const auto {} = ntk.create_not({}_h3);\n".format(res[0], res[0]))
                             gate_string_storage.append(Appendix)
 
-                        elif("OR" in res[1]):
+                        elif("or" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {}_h1 = ntk.create_or({}, {});\n".format(res[0], res[2], res[3]))
                             Appendix.append("    const auto {}_h2 = ntk.create_or({}, {});\n".format(res[0], res[4], res[5]))
@@ -237,7 +245,7 @@ for b_n in benchmark_name:
 
 
                     elif(len(res) == 8):
-                        if("NAND" in res[1]):
+                        if("nand" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -251,16 +259,16 @@ for b_n in benchmark_name:
 
                             gate_string_storage.append(Appendix)
 
-                        elif("AND" in res[1]):
+                        elif("and" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {}_h1 = ntk.create_and({}, {});\n".format(res[0], res[2], res[3]))
                             Appendix.append("    const auto {}_h2 = ntk.create_and({}_h1, {});\n".format(res[0], res[0], res[4]))
                             Appendix.append("    const auto {}_h3 = ntk.create_and({}, {});\n".format(res[0], res[4], res[5]))
-                            Appendix.append("    const auto {}_h4 = ntk.create_and({}_h2, {}_h3);\n".format(res[0], res[0], res[0]))
+                            Appendix.append("    const auto {} = ntk.create_and({}_h2, {}_h3);\n".format(res[0], res[0], res[0]))
 
                             gate_string_storage.append(Appendix)
                         
-                        elif("NOR" in res[1]):
+                        elif("nor" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -273,12 +281,12 @@ for b_n in benchmark_name:
                             Appendix.append("    const auto {} = ntk.create_not({}_h4);\n".format(res[0], res[0]))
                             gate_string_storage.append(Appendix)
 
-                        elif("OR" in res[1]):
+                        elif("or" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {}_h1 = ntk.create_or({}, {});\n".format(res[0], res[2], res[3]))
                             Appendix.append("    const auto {}_h2 = ntk.create_or({}_h1, {});\n".format(res[0], res[0], res[4]))
                             Appendix.append("    const auto {}_h3 = ntk.create_or({}, {});\n".format(res[0], res[4], res[5]))
-                            Appendix.append("    const auto {}_h4 = ntk.create_or({}_h2, {}_h3);\n".format(res[0], res[0], res[0]))
+                            Appendix.append("    const auto {} = ntk.create_or({}_h2, {}_h3);\n".format(res[0], res[0], res[0]))
 
                             gate_string_storage.append(Appendix)
 
@@ -287,7 +295,7 @@ for b_n in benchmark_name:
                         place_this_gate.append(res[0])
 
                     elif(len(res) == 9):
-                        if("NAND" in res[1]):
+                        if("nand" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -302,17 +310,17 @@ for b_n in benchmark_name:
 
                             gate_string_storage.append(Appendix)
 
-                        elif("AND" in res[1]):
+                        elif("and" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {}_h1 = ntk.create_and({}, {});\n".format(res[0], res[2], res[3]))
                             Appendix.append("    const auto {}_h2 = ntk.create_and({}, {});\n".format(res[0], res[4], res[5]))
                             Appendix.append("    const auto {}_h3 = ntk.create_and({}, {});\n".format(res[0], res[6], res[7]))
                             Appendix.append("    const auto {}_h4 = ntk.create_and({}_h1, {}_h2);\n".format(res[0], res[0], res[0]))
-                            Appendix.append("    const auto {}_h5 = ntk.create_and({}_h3, {}_h4);\n".format(res[0], res[0], res[0]))
+                            Appendix.append("    const auto {} = ntk.create_and({}_h3, {}_h4);\n".format(res[0], res[0], res[0]))
 
                             gate_string_storage.append(Appendix)
                         
-                        elif("NOR" in res[1]):
+                        elif("nor" in res[1]):
                             #res[2] and res[3] are the two inputs
 
                             #write the corresponding blueprint line for RO
@@ -326,13 +334,13 @@ for b_n in benchmark_name:
                             Appendix.append("    const auto {} = ntk.create_not({}_h5);\n".format(res[0], res[0]))
                             gate_string_storage.append(Appendix)
 
-                        elif("OR" in res[1]):
+                        elif("or" in res[1]):
                             Appendix = []
                             Appendix.append("    const auto {}_h1 = ntk.create_or({}, {});\n".format(res[0], res[2], res[3]))
                             Appendix.append("    const auto {}_h2 = ntk.create_or({}, {});\n".format(res[0], res[4], res[5]))
                             Appendix.append("    const auto {}_h3 = ntk.create_or({}, {});\n".format(res[0], res[6], res[7]))
                             Appendix.append("    const auto {}_h4 = ntk.create_or({}_h1, {}_h2);\n".format(res[0], res[0], res[0]))
-                            Appendix.append("    const auto {}_h5 = ntk.create_or({}_h3, {}_h4);\n".format(res[0], res[0], res[0]))
+                            Appendix.append("    const auto {} = ntk.create_or({}_h3, {}_h4);\n".format(res[0], res[0], res[0]))
 
                             gate_string_storage.append(Appendix)
 

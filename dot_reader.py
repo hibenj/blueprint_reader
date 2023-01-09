@@ -2,7 +2,7 @@ import re
 
 network_name = []
 
-with open('dot_nws/random_3.dot', 'r') as reader:
+with open('dot_nws/random_7.dot', 'r') as reader:
     line = reader.readline()
     # print(reader.readline)
     # while line != '':  # The EOF char is an empty string
@@ -15,7 +15,7 @@ with open('dot_nws/random_3.dot', 'r') as reader:
 
     network_name = re.split('\.|/', str(reader.name))
 
-with open('dot_blueprints/random_3.txt', 'w') as writer:
+with open('dot_blueprints/random_7.txt', 'w') as writer:
     # Alternatively you could use
     # writer.writelines(reversed(dog_breeds))
     
